@@ -5,9 +5,9 @@
             <h1>Portfolio</h1>
             <div class="round">
                 <p>
-                    <span>Project</span>
-                    <span>About</span>
-                    <span>Contact</span>
+                    <span @click="point(project)">Project</span>
+                    <span @click="point(about)">About</span>
+                    <span @click="point(contact)">Contact</span>
                 </p>
                 <p>
                     <span>Frontend</span>
@@ -15,11 +15,11 @@
                 </p>
             </div>
         </div>
-        <div class="project">
+        <div class="project" id="project">
             <h1>Project</h1>
             <!-- <div class="p_contant">
                 <div class="ppp">
-                    <div class="p_img"><img src="teamB_icon.jpg"/></div>
+                    <div class="p_img"><img src="_icon.jpg"/></div>
                     <div class="p_sim">
                         <h4>프로젝트 이름</h4>
                         <p>간단 소개</p>
@@ -46,12 +46,12 @@
                         <p>깃허브 주소</p>
                     </div>
                 </div>
-                <div class="p_line"></div>
+                <!-- <div class="p_line"></div> -->
                 <div class="p_deep">
                     <p>프로젝트 소개/설명</p>
                     <p>담당파트</p>
                     <p>기능 소개/설명 (트러블슈팅)</p>
-                    <!-- <p>구체적 스택/훅 사용 설명</p> -->
+                    <p>구체적 스택/훅 사용 설명</p>
                 </div>
             </div>
             <div class="p_contant">
@@ -65,7 +65,6 @@
                         <p>깃허브 주소</p>
                     </div>
                 </div>
-                <div class="p_line"></div>
                 <div class="p_deep">
                     <p>프로젝트 소개/설명</p>
                     <p>담당파트</p>
@@ -84,7 +83,6 @@
                         <p>깃허브 주소</p>
                     </div>
                 </div>
-                <div class="p_line"></div>
                 <div class="p_deep">
                     <p>프로젝트 소개/설명</p>
                     <p>담당파트</p>
@@ -103,7 +101,6 @@
                         <p>깃허브 주소</p>
                     </div>
                 </div>
-                <div class="p_line"></div>
                 <div class="p_deep">
                     <p>프로젝트 소개/설명</p>
                     <p>담당파트</p>
@@ -112,10 +109,10 @@
                 </div>
             </div>
         </div>
-        <div class="about">
+        <div class="about" id="about">
             <h1>About</h1>
             <div class="introduce">
-                <p>자기소개 한 문장</p>
+                <!-- <p>자기소개 한 문장</p> -->
             </div>
             <div class="key">
                 <div class="key_btn">
@@ -168,7 +165,7 @@
                 </div>
             </div>
         </div>
-        <div class="contact">
+        <div class="contact" id="contact">
             <h1>Contact</h1>
             <div class="conta">
                 <div>
@@ -185,7 +182,24 @@
 </template>
 <script>
 export default {
-    
+    data() {
+        return {
+            project : "project",
+            about : "about",
+            contact : "contact"
+        }
+    },
+    methods: {
+        point(id) {
+            const pointnav = document.getElementById(id);
+            if (pointnav) {
+                pointnav.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start',
+                });
+            }
+        }
+    }
 }
 </script>
 <style lang="scss">
@@ -233,9 +247,10 @@ export default {
                 display: flex;
                 align-items: flex-start;
                 justify-content: center;
-                gap: 70px;
+                // gap: 70px;
                 .ppp{
                     margin: 30px 0;
+                    margin-right: 70px;
                     .p_img{
                         width: 470px;
                         img{width: 100%;}
@@ -257,14 +272,17 @@ export default {
                         }
                     }
                 }
-                .p_line{
-                    border: 1px solid #eee;
-                    height: 888px;
-                }
+                // .p_line{
+                //     border: 1px solid #eee;
+                //     height: 888px;
+                // }
                 .p_deep{
-                    margin: 30px 0;
+                    // margin: 30px 0;
+                    padding: 30px 0;
                     text-align: left;
                     width: 610px;
+                    border-left: 1px solid #eee;
+                    padding-left: 70px;
                     p{
                         font-size: 1.5em; /* 24px */
                         // margin: 20px 0;
