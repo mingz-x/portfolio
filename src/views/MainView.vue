@@ -4,12 +4,12 @@
             <h4>Park Minji</h4>
             <h1>Portfolio</h1>
             <div class="round">
-                <p>
+                <p class="pointer">
                     <span @click="point(project)">Project</span>
                     <span @click="point(about)">About</span>
                     <span @click="point(contact)">Contact</span>
                 </p>
-                <p>
+                <p class="default">
                     <span>Frontend</span>
                     <span>Developer</span>
                 </p>
@@ -232,6 +232,12 @@ export default {
                         border-radius: 25px;
                         font-size: 1.875em; /* 30px */
                     }
+                }
+                .pointer{
+                    cursor: pointer;
+                }
+                .default{
+                    cursor: default;
                 }
             }
         }
