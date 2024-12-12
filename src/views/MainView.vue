@@ -19,95 +19,93 @@
             <h1>Project</h1>
             <div class="p_contant">
                 <div class="ppp">
-                    <div class="p_img"><img src="teamB_icon.jpg"/></div>
+                    <div class="p_img"><img src="icon/teamB_icon.jpg"/></div>
                     <div class="p_sim">
                         <span>팀 프로젝트 : </span>
                         <h3>해양생물연구센터</h3>
                         <p>Html, Css, Scss, Javascript</p>
                         <div class="p_link">
-                            <div class="icon" @click="ProjectLink('https://mingz-x.github.io/B/')"><img src="teamB_icon_S.jpg"/></div>
-                            <!-- <p>https://mingz-x.github.io/B/</p> -->
+                            <div class="icon" @click="ProjectLink('https://mingz-x.github.io/B/')"><img src="icon/teamB_icon_S.jpg"/></div>
                             <span/>
-                            <div class="icon" @click="ProjectLink('https://github.com/mingz-x/B.git')"><img src="github_icon.jpg"/></div>
-                            <!-- <p>https://github.com/mingz-x/B.git</p> -->
+                            <div class="icon" @click="ProjectLink('https://github.com/mingz-x/B.git')"><img src="icon/github_icon.jpg"/></div>
                         </div>
                     </div>
                 </div>
                 <div class="p_deep">
-                    <p>프로젝트 소개 &#58; </p> <br/>
-                    <p>노후화 된 사이트의 ux/ui를 좀 더 보기 편하 수정하기 위해 사이트 리뉴얼 작업을 진행하게 되어 해양생물연구센터 사이트를 리뉴얼 작업했습니다.</p> <br/>
-                    <p>반응형으로 제작하여 어떤 기기로 사이트에 방문하여도 유저가 편안하게 사용할 수 있도록 작업했습니다.</p>
+                    <h2 class="project_in">프로젝트 소개 &#58; </h2>
+                        <p>사이트 리뉴얼 작업으로 사용자의 편의성을 높이기 위해 ux/ui를 수정하고 반응형으로 제작하여 어떤 기기로 사이트에 방문하여도 이용에 불편함이 없도록 작업했습니다.</p> <br/>
+                        <p>프로젝트는 html, css, scss, javascript를 이용하여 작업하였습니다.</p> <br/>
+                    <h2>페이지 소개 &#58; </h2>
+                        <p>‘인사말, 오시는 길, 구조ㆍ치료 활동, 서식지 외 보존 기관’ 페이지 제작을 맡았습니다.</p>
                 </div>
             </div>
             <div class="p_contant">
                 <div class="ppp">
-                    <div class="p_img"><img src="sema_icon.jpg"/></div>
+                    <div class="p_img"><img src="icon/sema_icon.jpg"/></div>
                     <div class="p_sim">
                         <span>프로젝트 : </span>
                         <h3>Sema 서울시립미술관</h3>
                         <p>Html, Css, Javascript, Next.js, Nextauth, Firebase</p>
                         <div class="p_link">
-                            <div class="icon"><img src="sema_icon_S.jpg"/></div>
-                            <!-- <p>https://sema.vercel.app/</p> -->
+                            <div class="icon" @click="ProjectLink('https://sema.vercel.app/')"><img src="icon/sema_icon_S.jpg"/></div>
                             <span/>
-                            <div class="icon"><img src="github_icon.jpg"/></div>
-                            <!-- <p>https://github.com/mingz-x/sema.git</p> -->
+                            <div class="icon" @click="ProjectLink('https://github.com/mingz-x/sema.git')"><img src="icon/github_icon.jpg"/></div>
                         </div>
                     </div>
                 </div>
                 <div class="p_deep">
-                    <p>프로젝트 소개 : </p> <br/>
-                    <p>서울열린데이터광장에서 제공하는 서울시 오픈 API 중 관심가는 데이터인 미술관 데이터를 선택하여 기획했습니다.</p> <br/>
-                    <p>프로젝트는 자바스크립트 프레임워크인 next.js를 사용하여 작업했습니다.</p>
-                        <!-- 페이지 소개 : 
-                        모바일 앱으로 제작하여 큰 메뉴로는 ‘검색, 메뉴, 홈(메인), 스크랩, 마이페이지’로 크게 5개의 메뉴로 구성했습니다. -->
+                    <h2 class="project_in">프로젝트 소개 : </h2>
+                        <p>서울열린데이터광장에서 제공하는 서울시 오픈 API 중 관심가는 데이터인 미술관 데이터를 선택하여 기획했습니다.</p> <br/>
+                        <p>프로젝트는 자바스크립트 프레임워크인 next.js를 사용하여 작업했습니다.</p> <br/>
+                    <h2>페이지 소개 : </h2>
+                        <p>모바일 앱으로 제작하여 큰 메뉴로는 ‘검색, 메뉴, 홈(메인), 스크랩, 마이페이지’로 크게 5개의 메뉴로 구성했습니다.</p>
                 </div>
             </div>
             <div class="p_contant">
                 <div class="ppp">
-                    <div class="p_img"><img src="movie_icon.jpg"/></div>
+                    <div class="p_img"><img src="icon/movie_icon.jpg"/></div>
                     <div class="p_sim">
                         <span>프로젝트 : </span>
                         <h3>Movie</h3>
                         <p>Html, Css, Javascript, React.js</p>
                         <div class="p_link">
-                            <div class="icon"><img src="movie_icon_S.jpg"/></div>
-                            <!-- <p>https://movie.vercel.app/</p> -->
+                            <div class="icon" @click="ProjectLink('https://movie-theta-black.vercel.app/')"><img src="icon/movie_icon_S.jpg"/></div>
                             <span/>
-                            <div class="icon"><img src="github_icon.jpg"/></div>
-                            <!-- <p>https://github.com/mingz-x/movie.git</p> -->
+                            <div class="icon" @click="ProjectLink('https://github.com/mingz-x/movie.git')"><img src="icon/github_icon.jpg"/></div>
                         </div>
                     </div>
                 </div>
                 <div class="p_deep">
-                    <p>프로젝트 소개 : </p> <br/>
-                    <p>영화 오픈 API를 이용하여 영화 페이지를 기획했습니다.</p> <br/>
-                    <p>프로젝트는 자바스크립트 라이브러리인 react.js를 사용하여 작업했습니다.</p>
+                    <h2 class="project_in">프로젝트 소개 : </h2>
+                        <p>영화 오픈 API를 이용하여 영화 사이트를 기획했습니다.</p> <br/>
+                        <!-- 영화 오픈 API를 이용하여 사이트를 제작했습니다. -->
+                        <p>프로젝트는 자바스크립트 라이브러리인 react.js를 사용하여 작업했습니다.</p> <br/>
+                        <!-- 프로젝트는 자바스크립트 라이브러리인 react.js를 사용하여 작업했습니다. -->
+                    <h2>페이지 소개 : </h2>
+                        <p>‘메인, 영화, 티비시리즈’ 3개의 메뉴와 상세페이지로 총 4개의 페이지로 제작했습니다.</p>
+                        <!-- ‘메인, 영화, 티비시리즈’ 3개의 페이지와 상세페이지로 총 4개의 페이지로 제작했습니다. -->
                 </div>
             </div>
             <div class="p_contant">
                 <div class="ppp">
-                    <div class="p_img"><img src="news_icon.jpg"/></div>
+                    <div class="p_img"><img src="icon/news_icon.jpg"/></div>
                     <div class="p_sim">
                         <span>프로젝트 : </span>
                         <h3>News</h3>
                         <p>Html, Css, Javascript, Vue.js</p>
                         <div class="p_link">
-                            <div class="icon"><img src="news_icon_S.jpg"/></div>
-                            <!-- <p>https://news.vercel.app/</p> -->
+                            <div class="icon" @click="ProjectLink('https://news-sable-one.vercel.app/')"><img src="icon/news_icon_S.jpg"/></div>
                             <span/>
-                            <div class="icon"><img src="github_icon.jpg"/></div>
-                            <!-- <p>https://github.com/mingz-x/news.git</p> -->
+                            <div class="icon" @click="ProjectLink('https://github.com/mingz-x/news.git')"><img src="icon/github_icon.jpg"/></div>
                         </div>
                     </div>
                 </div>
                 <div class="p_deep">
-                    <p>프로젝트 소개 : </p> <br/>
-                    <p>뉴스 오픈 API를 이용해서 뉴스 페이지를 기획했습니다.</p> <br/>
-                    <p>프로젝트는 프로그레시브 자바스크립트 프레임워크인 vue.js를 사용하여 개발했습니다.</p>
-
-                    <!-- 페이지 소개/설명 : 
-                    국내와 해외로 나누어 개발하였고, 국내와 해외라는 큰 카테고리 안에 ‘전체, 정치, 경제, 사회, 문화, 세계, 기술/IT, 연예, 사설’로 나누어 탭버튼을 개발하여 원하는 주제의 기사만 볼 수 있도록 기획하였습니다. -->
+                    <h2 class="project_in">프로젝트 소개 : </h2>
+                        <p>뉴스 오픈 API를 이용해서 뉴스 페이지를 기획했습니다.</p> <br/>
+                        <p>프로젝트는 프로그레시브 자바스크립트 프레임워크인 vue.js를 사용하여 개발했습니다.</p> <br/>
+                    <h2>페이지 소개/설명 : </h2>
+                        <p>‘국내,해외’ 2개의 페이지 안에 ‘전체, 정치, 경제, 사회, 문화, 세계, 기술/IT, 연예, 사설’로 나누어 탭버튼을 개발하여 원하는 주제의 기사만 볼 수 있도록 기획하였습니다.</p>
                 </div>
             </div>
         </div>
@@ -121,19 +119,19 @@
             <div class="key">
                 <div class="key_btn">
                     <div :class="['btn',{active:realIndex==0}]" @click="slideTo(0)">
-                        <div class="S_img"><img src="green_S.jpg"/></div>
+                        <div class="S_img"><img src="about/green_S.jpg"/></div>
                         <span>긍정적</span>
                     </div>
                     <div :class="['btn',{active:realIndex==1}]" @click="slideTo(1)">
-                        <div class="S_img"><img src="red_S.jpg"/></div>
+                        <div class="S_img"><img src="about/red_S.jpg"/></div>
                         <span>분석적</span>
                     </div>
                     <div :class="['btn',{active:realIndex==2}]" @click="slideTo(2)">
-                        <div class="S_img"><img src="yellow_S.jpg"/></div>
+                        <div class="S_img"><img src="about/yellow_S.jpg"/></div>
                         <span>창의적</span>
                     </div>
                     <div :class="['btn',{active:realIndex==3}]" @click="slideTo(3)">
-                        <div class="S_img"><img src="blue_S.jpg"/></div>
+                        <div class="S_img"><img src="about/blue_S.jpg"/></div>
                         <span>의사소통</span>
                     </div>
                 </div>
@@ -151,7 +149,7 @@
                         >
                         <swiper-slide>
                             <div class="word">
-                                <div class="B_img"><img src="green_B.jpg"/></div>
+                                <div class="B_img"><img src="about/green_B.jpg"/></div>
                                 <div class="kw">
                                     <span># 긍정적인</span>
                                     <p>긍정적인 성격으로 문제 해결과 협업 등 팀워크에서 긍정적인 에너지를 발산합니다.</p>
@@ -160,7 +158,7 @@
                         </swiper-slide>
                         <swiper-slide>
                             <div class="word">
-                                <div class="B_img"><img src="red_B.jpg"/></div>
+                                <div class="B_img"><img src="about/red_B.jpg"/></div>
                                 <div class="kw">
                                     <span># 분석적인</span>
                                     <p>차분하게 데이터를 분석하고 꼼꼼하게 작업하여 코드의 품질을 높입니다.</p>
@@ -169,7 +167,7 @@
                         </swiper-slide>
                         <swiper-slide>
                             <div class="word">
-                                <div class="B_img"><img src="yellow_B.jpg"/></div>
+                                <div class="B_img"><img src="about/yellow_B.jpg"/></div>
                                 <div class="kw">
                                     <span># 창의적인</span>
                                     <p>창의적 사고로 혁신적인 해결책을 제시합니다.</p>
@@ -178,7 +176,7 @@
                         </swiper-slide>
                         <swiper-slide>
                             <div class="word">
-                                <div class="B_img"><img src="blue_B.jpg"/></div>
+                                <div class="B_img"><img src="about/blue_B.jpg"/></div>
                                 <div class="kw">
                                     <span># 의사소통</span>
                                     <p>다양한 팀원들과의 협업에서 효과적인 의사소통 능력을 구사합니다.</p>
@@ -199,11 +197,11 @@
             </div> -->
             <div class="conta">
                 <div>
-                    <div class="conta_img"><img src="email_icon.svg"/></div>
+                    <div class="conta_img"><img src="contact/email_icon.svg"/></div>
                     <p>email@email.com</p>
                 </div>
                 <div>
-                    <div class="conta_img"><img src="github_icon.svg"/></div>
+                    <div class="conta_img"><img src="contact/github_icon.svg"/></div>
                     <p>github.com/github/Repository</p>
                 </div>
             </div>
@@ -288,18 +286,19 @@ export default {
         margin: 0 auto;
         img{vertical-align: middle;}
         .intro{
-            // margin: 300px 0;
-            margin-top: 250px;
-            // margin-bottom: 300px;
+            height: 100vh;
+            align-content: center;
             h4{
                 margin: 0;
                 font-size: 5em;  /* 80px */
                 /* 6.25em = 100px */
+                cursor: default;
             }
             h1{
                 margin: 0;
                 margin-bottom: 20px;
                 font-size: 12.5em;  /* 200px */
+                cursor: default;
             }
             .round{
                 p{
@@ -310,14 +309,16 @@ export default {
                         margin: 5px 10px;
                         padding: 7px 20px;
                         text-align: center;
-                        border: 1px solid black;
+                        border: 2px solid black;
                         border-radius: 25px;
                         font-size: 1.875em; /* 30px */
                     }
                 }
                 .pointer{
-                    cursor: pointer;
-                }
+                    span{
+                        cursor: pointer;
+                    }
+                } 
                 .default{
                     cursor: default;
                 }
@@ -325,9 +326,10 @@ export default {
         }
         h1{
             font-size: 6.25em; /* 100px */
+            cursor: default;
         }
         .project{
-            margin-top: 300px;
+            margin: 300px 0;
             .p_contant{
                 // margin: 150px 300px;
                 margin: 150px 120px;
@@ -353,7 +355,7 @@ export default {
                             font-size: 1.5em; /* 24px */
                         }
                         h3{
-                            font-size: 2.5em;
+                            font-size: 2.5em; /* 40px */
                             margin: 0;
                             margin-bottom: 20px;
                         }
@@ -372,6 +374,9 @@ export default {
                             // .g_icon{
                             //     margin-left: 30px;
                             // }
+                            .icon{
+                                cursor: pointer;
+                            }
                             span{
                                 border: 1px solid black;
                                 height: 40px;
@@ -392,8 +397,11 @@ export default {
                     // border-left: 1px solid #eee;
                     // padding-left: 70px;
                     margin-left: 70px;
+                    .project_in{
+                        margin-top: 0;
+                    }
                     p{
-                        font-size: 1.5em; /* 24px */
+                        font-size: 1.75em; /* 28px */
                         // margin: 20px 0;
                         margin: 0;
                     }
@@ -401,7 +409,8 @@ export default {
             }
         }
         .about{
-            margin-top: 300px;
+            margin: 300px 0;
+            height: 100vh;
             .introduce{
                 p{
                     // margin-top: 100px;
@@ -484,7 +493,8 @@ export default {
             }
         }
         .contact{
-            margin: 300px 0;
+            height: 100vh;
+            align-content: center;
             h1{
                 margin-bottom: 100px;
             }
