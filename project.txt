@@ -1,0 +1,876 @@
+ver.1
+<div class="project" id="project">
+    <h1>Project</h1>
+    <div class="p_contant">
+        <div class="ppp">
+            <div class="p_img"><img src="icon/teamB_icon.jpg"/></div>
+            <div class="p_sim">
+                <span>팀 프로젝트 : </span>
+                <h3>해양생물연구센터</h3>
+                <p>Html, Css, Scss, Javascript</p>
+                <div class="p_link">
+                    <div class="icon" @click="ProjectLink('https://mingz-x.github.io/B/')"><img src="icon/teamB_icon_S.jpg"/></div>
+                    <span/>
+                    <div class="icon" @click="ProjectLink('https://github.com/mingz-x/B.git')"><img src="icon/github_icon.jpg"/></div>
+                </div>
+            </div>
+        </div>
+        <div class="p_deep">
+            <h2 class="project_in">프로젝트 소개 &#58; </h2>
+                <p>사이트 리뉴얼 작업으로 사용자의 편의성을 높이기 위해 ux/ui를 수정하고 반응형으로 제작하여 어떤 기기로 사이트에 방문하여도 이용에 불편함이 없도록 작업했습니다.</p> <br/>
+                <p>프로젝트는 html, css, scss, javascript를 이용하여 작업하였습니다.</p> <br/>
+            <h2>페이지 소개 &#58; </h2>
+                <p>‘인사말, 오시는 길, 구조ㆍ치료 활동, 서식지 외 보존 기관’ 페이지 제작을 맡았습니다.</p>
+        </div>
+    </div>
+    <div class="p_contant">
+        <div class="ppp">
+            <div class="p_img"><img src="icon/sema_icon.jpg"/></div>
+            <div class="p_sim">
+                <span>프로젝트 : </span>
+                <h3>Sema 서울시립미술관</h3>
+                <p>Html, Css, Javascript, Next.js, Nextauth, Firebase</p>
+                <div class="p_link">
+                    <div class="icon" @click="ProjectLink('https://sema.vercel.app/')"><img src="icon/sema_icon_S.jpg"/></div>
+                    <span/>
+                    <div class="icon" @click="ProjectLink('https://github.com/mingz-x/sema.git')"><img src="icon/github_icon.jpg"/></div>
+                </div>
+            </div>
+        </div>
+        <div class="p_deep">
+            <h2 class="project_in">프로젝트 소개 : </h2>
+                <p>서울열린데이터광장에서 제공하는 서울시 오픈 API 중 관심가는 데이터인 미술관 데이터를 선택하여 기획했습니다.</p> <br/>
+                <p>프로젝트는 자바스크립트 프레임워크인 next.js를 사용하여 작업했습니다.</p> <br/>
+            <h2>페이지 소개 : </h2>
+                <p>모바일 앱으로 제작하여 큰 메뉴로는 ‘검색, 메뉴, 홈(메인), 스크랩, 마이페이지’로 크게 5개의 메뉴로 구성했습니다.</p>
+        </div>
+    </div>
+    <div class="p_contant">
+        <div class="ppp">
+            <div class="p_img"><img src="icon/movie_icon.jpg"/></div>
+            <div class="p_sim">
+                <span>프로젝트 : </span>
+                <h3>Movie</h3>
+                <p>Html, Css, Javascript, React.js</p>
+                <div class="p_link">
+                    <div class="icon" @click="ProjectLink('https://movie-theta-black.vercel.app/')"><img src="icon/movie_icon_S.jpg"/></div>
+                    <span/>
+                    <div class="icon" @click="ProjectLink('https://github.com/mingz-x/movie.git')"><img src="icon/github_icon.jpg"/></div>
+                </div>
+            </div>
+        </div>
+        <div class="p_deep">
+            <h2 class="project_in">프로젝트 소개 : </h2>
+                <p>영화 오픈 API를 이용하여 영화 사이트를 기획했습니다.</p> <br/>
+                <!-- 영화 오픈 API를 이용하여 사이트를 제작했습니다. -->
+                <p>프로젝트는 자바스크립트 라이브러리인 react.js를 사용하여 작업했습니다.</p> <br/>
+                <!-- 프로젝트는 자바스크립트 라이브러리인 react.js를 사용하여 작업했습니다. -->
+            <h2>페이지 소개 : </h2>
+                <p>‘메인, 영화, 티비시리즈’ 3개의 메뉴와 상세페이지로 총 4개의 페이지로 제작했습니다.</p>
+                <!-- ‘메인, 영화, 티비시리즈’ 3개의 페이지와 상세페이지로 총 4개의 페이지로 제작했습니다. -->
+        </div>
+    </div>
+    <div class="p_contant">
+        <div class="ppp">
+            <div class="p_img"><img src="icon/news_icon.jpg"/></div>
+            <div class="p_sim">
+                <span>프로젝트 : </span>
+                <h3>News</h3>
+                <p>Html, Css, Javascript, Vue.js</p>
+                <div class="p_link">
+                    <div class="icon" @click="ProjectLink('https://news-sable-one.vercel.app/')"><img src="icon/news_icon_S.jpg"/></div>
+                    <span/>
+                    <div class="icon" @click="ProjectLink('https://github.com/mingz-x/news.git')"><img src="icon/github_icon.jpg"/></div>
+                </div>
+            </div>
+        </div>
+        <div class="p_deep">
+            <h2 class="project_in">프로젝트 소개 : </h2>
+                <p>뉴스 오픈 API를 이용해서 뉴스 페이지를 기획했습니다.</p> <br/>
+                <p>프로젝트는 프로그레시브 자바스크립트 프레임워크인 vue.js를 사용하여 개발했습니다.</p> <br/>
+            <h2>페이지 소개/설명 : </h2>
+                <p>‘국내,해외’ 2개의 페이지 안에 ‘전체, 정치, 경제, 사회, 문화, 세계, 기술/IT, 연예, 사설’로 나누어 탭버튼을 개발하여 원하는 주제의 기사만 볼 수 있도록 기획하였습니다.</p>
+        </div>
+    </div>
+</div>
+.project{
+    margin: 300px 0;
+    .p_contant{
+        // margin: 150px 300px;
+        margin: 150px 120px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        // gap: 70px;
+        .ppp{
+            // margin: 30px 0;
+            // margin-right: 70px;
+            border-right: 1px solid #eee;
+            padding: 30px 0;
+            padding-right: 70px;
+            .p_img{
+                width: 470px;
+                img{width: 100%;}
+            }
+            .p_sim{
+                text-align: left;
+                width: 470px;
+                margin-top: 20px;
+                span{
+                    font-size: 1.5em; /* 24px */
+                }
+                h3{
+                    font-size: 2.5em; /* 40px */
+                    margin: 0;
+                    margin-bottom: 20px;
+                }
+                p{
+                    font-size: 1.875em; /* 30px */
+                    margin: 0;
+                }
+                .p_link{
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    margin-top: 20px;
+                    // .p_icon{
+                    //     margin-right: 30px;
+                    // }
+                    // .g_icon{
+                    //     margin-left: 30px;
+                    // }
+                    .icon{
+                        cursor: pointer;
+                    }
+                    span{
+                        border: 1px solid black;
+                        height: 40px;
+                        margin: 0 30px;
+                    }
+                }
+            }
+        }
+        // .p_line{
+        //     border: 1px solid #eee;
+        //     height: 888px;
+        // }
+        .p_deep{
+            margin: 30px 0;
+            // padding: 30px 0;
+            text-align: left;
+            width: 610px;
+            // border-left: 1px solid #eee;
+            // padding-left: 70px;
+            margin-left: 70px;
+            .project_in{
+                margin-top: 0;
+            }
+            p{
+                font-size: 1.75em; /* 28px */
+                // margin: 20px 0;
+                margin: 0;
+            }
+        }
+    }
+}
+
+
+ver.2
+<div class="project" id="project">
+    <h1>Project</h1>
+    <div class="p_contant">
+        <div class="ppp">
+            <div class="p_card">
+                <div class="p_img"><img src="icon/teamB_icon.jpg"/></div>
+            </div>
+            <div class="p_deep">
+                <h2>해양생물연구센터</h2>
+                <p>팀프로젝트 작업 <br/> 노후화 된 사이트 리뉴얼</p>
+                <p>Html, Css, Scss, Javascript</p>
+                <div class="p_link">
+                    <div class="p_icon" @click="ProjectLink('https://mingz-x.github.io/B/')"><img src="icon/teamB_icon_S.jpg"/></div>
+                    <div class="g_icon" @click="ProjectLink('https://github.com/mingz-x/B.git')"><img src="icon/github_icon.jpg"/></div>
+                </div>
+            </div>
+            <div class="p_name">해양생물연구센터</div>
+        </div>
+    </div>
+</div>
+.project{
+    margin: 300px 0;
+    .p_contant{
+        // margin: 150px 120px;
+        .ppp{
+            width: 400px;
+            height: 600px;
+            border: 1px solid black;
+            .p_card{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .p_img{
+                    width: 220px;
+                    img{width: 100%;}
+                }
+            }
+            .p_name{
+                // width: 400px;
+                height: 100px;
+                // border: 1px solid black;
+                background-color: black;
+                color: white;
+                font-size: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .p_deep{
+                h2{
+                    font-size: 30px;
+                    font-weight: bold;
+                    border-bottom: 2px solid black;
+                }
+                .p_link{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .p_icon{
+                        width: 60px;
+                        img{width: 100%;}
+                    }
+                    .g_icon{
+                        width: 55px;
+                        img{width: 100%;}
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+ver.3
+<div class="p_contant">
+    <div class="p_card">
+        <div class="card">
+            <!-- <div class="card_img"><img src="project/teamB_B.icon.svg"/></div> -->
+            <div class="card_contant">
+                <h3>해양생물연구센터</h3>
+                <p>
+                    팀프로젝트 작업 <br/> 
+                    노후화 된 사이트 리뉴얼 <br/>
+                    인사말, 오시는 길, 구조, 보호 페이지 제작
+                </p>
+                <p>html, css, scss, javascript</p>
+                <div class="c_icon">
+                    <div class="p_icon" @click="ProjectLink('')"><img src="project/teamB_S.icon.svg"/></div>
+                    <span/>
+                    <div class="g_icon" @click="ProjectLink('')"><img src="project/github_S.icon.svg"/></div>
+                </div>
+            </div>
+        </div>
+        <h3 class="card_name">해양생물연구센터</h3>
+    </div>
+    <div class="p_card">
+        <div class="card">
+            <!-- <div class="card_img"><img src="project/sema_B.icon.svg"/></div> -->
+            <div class="card_contant">
+                <h3>Sema 서울시립미술관</h3>
+                <p>
+                    서울열린데이터광장 제공 서울시 오픈 API 사용
+                </p>
+                <p>html, css, scss, javascript, next.js, nextauth, firebase</p>
+                <div class="c_icon">
+                    <div class="p_icon" @click="ProjectLink('')"><img src="project/sema_S.icon.svg"/></div>
+                    <span/>
+                    <div class="g_icon" @click="ProjectLink('')"><img src="project/github_S.icon.svg"/></div>
+                </div>
+            </div>
+        </div>
+        <h3 class="card_name">Sema 서울시립미술관</h3>
+    </div>
+    <div class="p_card">
+        <div class="card">
+            <!-- <div class="card_img"><img src="project/movie_B.icon.svg"/></div> -->
+            <div class="card_contant">
+                <h3>Movie</h3>
+                <p>
+                    영화 오픈 API 사용
+                </p>
+                <p>html, css, scss, javascript, react.js</p>
+                <div class="c_icon">
+                    <div class="p_icon" @click="ProjectLink('')"><img src="project/movie_S.icon.svg"/></div>
+                    <span/>
+                    <div class="g_icon" @click="ProjectLink('')"><img src="project/github_S.icon.svg"/></div>
+                </div>
+            </div>
+        </div>
+        <h3 class="card_name">Movie</h3>
+    </div>
+    <div class="p_card">
+        <div class="card">
+            <!-- <div class="card_img"><img src="project/news_B.icon.svg"/></div> -->
+            <div class="card_contant">
+                <h3>News</h3>
+                <p>
+                    뉴스 오픈 API 사용
+                </p>
+                <p>html, css, scss, javascript</p>
+                <div class="c_icon">
+                    <div class="p_icon" @click="ProjectLink('')"><img src="project/news_S.icon.svg"/></div>
+                    <span/>
+                    <div class="g_icon" @click="ProjectLink('')"><img src="project/github_S.icon.svg"/></div>
+                </div>
+            </div>
+        </div>
+        <h3 class="card_name">News</h3>
+    </div>
+</div>
+
+:hover
+    v-if="!isHovered" 
+    @mouseover="isHovered = true" 
+    @mouseleave="isHovered = false"
+    <div 
+        v-if="isHovered" class="card_contant"
+        @mouseover="isHovered = true" 
+        @mouseleave="isHovered = false"
+    >
+
+
+ver.4
+    Vue에서 v-for 디렉티브를 사용하여 p_card 부분을 반복하려면, 데이터를 배열로 만들어서 각 항목을 순차적으로 렌더링하면 됩니다.
+    예시: 우리는 프로젝트 카드들을 반복하고 싶다고 가정할 때, p_card를 반복하려면, 먼저 data 속성에 반복할 데이터를 배열로 저장하고, 그 데이터를 v-for로 순회하면서 렌더링하면 됩니다.
+        1. Vue 데이터 구조 만들기:
+            먼저, 반복할 데이터를 data 안에 배열로 정의합니다. 예를 들어, 각 카드에 대한 정보가 객체로 들어있는 배열을 정의할 수 있습니다.
+        2. v-for 사용:
+            v-for를 사용하여 데이터를 반복하면서 카드를 생성합니다.
+Vue 컴포넌트 예시
+<template>
+  <div class="p_contant">
+    <!-- v-for로 p_card 반복 -->
+    <div 
+      v-for="(project, index) in projects" 
+      :key="index" 
+      class="p_card"
+      @mouseover="project.isHovered = true" 
+      @mouseleave="project.isHovered = false"
+    >
+      <div class="card">
+        <div class="card_img">
+          <img :src="project.image" alt="Project image"/>
+        </div>
+
+        <!-- 마우스를 올렸을 때만 카드 내용이 표시됨 -->
+        <div 
+          v-if="project.isHovered" 
+          class="card_contant"
+        >
+          <h3>{{ project.name }}</h3>
+          <p>{{ project.description }}</p>
+          <p>{{ project.technologies }}</p>
+          <div class="c_icon">
+            <div class="p_icon" @click="ProjectLink(project.projectLink)">
+              <img :src="project.projectIcon" alt="Project icon"/>
+            </div>
+            <span/>
+            <div class="g_icon" @click="ProjectLink(project.githubLink)">
+              <img :src="project.githubIcon" alt="GitHub icon"/>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h3 class="card_name">{{ project.name }}</h3>
+    </div>
+  </div>
+</template
+<script>
+    export default {
+    data() {
+        return {
+        // 프로젝트 카드 데이터
+        projects: [
+            {
+            name: "해양생물연구센터",
+            description: "팀프로젝트 작업 \n 노후화 된 사이트 리뉴얼 \n 인사말, 오시는 길, 구조, 보호 페이지 제작",
+            technologies: "html, css, scss, javascript",
+            image: "project/teamB_B.icon.svg",
+            projectIcon: "project/teamB_S.icon.svg",
+            githubIcon: "project/github_S.icon.svg",
+            projectLink: "",  // 실제 프로젝트 링크로 바꿔주세요
+            githubLink: "",   // 실제 GitHub 링크로 바꿔주세요
+            isHovered: false  // 카드 호버 상태
+            },
+            {
+            name: "다른 프로젝트",
+            description: "다른 프로젝트 설명",
+            technologies: "html, css, js",
+            image: "project/other_project.icon.svg",
+            projectIcon: "project/other_project_icon.svg",
+            githubIcon: "project/github_other_project_icon.svg",
+            projectLink: "",
+            githubLink: "",
+            isHovered: false
+            }
+            // 추가 프로젝트 항목 추가 가능
+        ]
+        };
+    },
+    methods: {
+        ProjectLink(link) {
+        // 링크가 존재하면 새 창에서 열기
+        if (link) {
+            window.open(link, '_blank');
+        }
+        }
+    }
+    };
+</script>
+<style scoped>
+    /* CSS 스타일 정의 */
+    .p_card {
+    /* 카드 스타일 */
+    }
+
+    .card_img img {
+    width: 100%;
+    height: auto;
+    }
+
+    .card_contant {
+    display: none;
+    }
+
+    .p_card:hover .card_contant {
+    display: block;
+    }
+</style>
+설명:
+    1. projects 배열:
+        projects 배열 안에 각 프로젝트 카드에 대한 정보가 객체로 들어있습니다.
+        각 객체는 name, description, technologies, image, projectLink, githubLink, isHovered 등을 포함합니다. isHovered는 각 프로젝트 카드의 마우스 호버 상태를 관리합니다.
+    2. v-for 디렉티브:
+        v-for="(project, index) in projects"는 projects 배열을 순회하면서 각 항목을 project라는 변수로 받아옵니다.
+        :key="index"는 Vue가 각 항목을 구분할 수 있도록 고유한 값을 제공하기 위해 사용됩니다. 여기서는 index를 사용했습니다.
+    3. 반복되는 카드 내용:
+        각 프로젝트 항목에 대해 이미지, 이름, 설명, 사용 기술, GitHub 링크 등 다양한 정보를 템플릿에 출력합니다.
+        :src="project.image"와 같은 바인딩을 사용하여 각 프로젝트에 맞는 이미지와 링크를 동적으로 설정합니다.
+    4. 호버 상태 처리:
+        각 카드의 isHovered 상태는 마우스를 올리면 true, 내리면 false로 바뀌며, 이 상태에 따라 카드의 세부 내용이 표시됩니다.
+        v-if="project.isHovered"를 사용하여 마우스를 올렸을 때만 card_contant 영역이 표시되도록 합니다.
+    5. ProjectLink 메소드:
+        @click="ProjectLink(project.projectLink)"와 같은 방식으로 클릭 시 각 프로젝트에 해당하는 링크를 새 창에서 열도록 설정합니다.
+    결론:
+        이제 projects 배열에 프로젝트 정보를 추가하거나 수정하여, p_card가 자동으로 반복되어 표시됩니다. 이렇게 v-for 디렉티브를 사용하면, 데이터에 기반한 동적인 반복 렌더링을 쉽게 처리할 수 있습니다.
+
+ver.4-1
+    마우스를 카드에 가져다 댔을 때, 동시에 다른 카드들이 모두 호버 상태로 변하는 문제는 isHovered 상태가 공통된 하나의 상태로 관리되고 있기 때문입니다. 이 상태가 모든 카드에서 동일하게 공유되면, 한 카드를 호버할 때 모든 카드가 동시에 상태가 변경되면서 동시에 호버 상태로 바뀌게 됩니다.
+    이 문제를 해결하려면 각 카드의 isHovered 상태를 개별적으로 관리해야 합니다. 즉, 각 카드마다 독립적인 호버 상태를 갖도록 해야 합니다.
+    해결 방법: isHovered 상태를 각 카드 객체에 포함시키고, 해당 카드에 마우스를 올렸을 때 그 카드의 isHovered 값만 변경되도록 하면 됩니다.
+수정된 코드 예시:
+<template>
+  <div class="p_contant">
+    <!-- v-for로 p_card 반복 -->
+    <div 
+      v-for="(project, index) in projects" 
+      :key="index" 
+      class="p_card"
+      @mouseover="project.isHovered = true" 
+      @mouseleave="project.isHovered = false"
+    >
+      <div class="card">
+        <div class="card_img">
+          <img :src="project.image" alt="Project image"/>
+        </div>
+
+        <!-- 각 프로젝트의 호버 상태에 따라 내용 표시 -->
+        <div 
+          v-if="project.isHovered" 
+          class="card_contant"
+        >
+          <h3>{{ project.name }}</h3>
+          <p>{{ project.description }}</p>
+          <p>{{ project.technologies }}</p>
+          <div class="c_icon">
+            <div class="p_icon" @click="ProjectLink(project.projectLink)">
+              <img :src="project.projectIcon" alt="Project icon"/>
+            </div>
+            <span/>
+            <div class="g_icon" @click="ProjectLink(project.githubLink)">
+              <img :src="project.githubIcon" alt="GitHub icon"/>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h3 class="card_name">{{ project.name }}</h3>
+    </div>
+  </div>
+</template>
+<script>
+    export default {
+    data() {
+        return {
+        // 각 카드마다 isHovered 상태를 관리하도록 수정
+        projects: [
+            {
+            name: "해양생물연구센터",
+            description: "팀프로젝트 작업 \n 노후화 된 사이트 리뉴얼 \n 인사말, 오시는 길, 구조, 보호 페이지 제작",
+            technologies: "html, css, scss, javascript",
+            image: "project/teamB_B.icon.svg",
+            projectIcon: "project/teamB_S.icon.svg",
+            githubIcon: "project/github_S.icon.svg",
+            projectLink: "",  // 실제 프로젝트 링크로 바꿔주세요
+            githubLink: "",   // 실제 GitHub 링크로 바꿔주세요
+            isHovered: false  // 각 카드별로 호버 상태
+            },
+            {
+            name: "다른 프로젝트",
+            description: "다른 프로젝트 설명",
+            technologies: "html, css, js",
+            image: "project/other_project.icon.svg",
+            projectIcon: "project/other_project_icon.svg",
+            githubIcon: "project/github_other_project_icon.svg",
+            projectLink: "",
+            githubLink: "",
+            isHovered: false
+            }
+            // 추가 프로젝트 항목 추가 가능
+        ]
+        };
+    },
+    methods: {
+        ProjectLink(link) {
+        // 링크가 존재하면 새 창에서 열기
+        if (link) {
+            window.open(link, '_blank');
+        }
+        }
+    }
+    };
+</script>
+<style scoped>
+    /* CSS 스타일 정의 */
+    .p_card {
+    /* 카드 스타일 */
+    }
+
+    .card_img img {
+    width: 100%;
+    height: auto;
+    }
+
+    .card_contant {
+    display: none;
+    }
+
+    .p_card:hover .card_contant {
+    display: block;
+    }
+</style>
+주요 변경 사항:
+    1. projects 배열에 각 카드의 isHovered 상태를 추가:
+        각 카드 객체마다 isHovered: false로 초기화된 isHovered 상태를 추가했습니다. 이제 각 카드마다 개별적으로 호버 상태를 관리합니다.
+    2. v-for 반복문에서 @mouseover와 @mouseleave 이벤트 처리:
+        각 카드에서 마우스를 올리면 해당 카드의 isHovered 값만 true로 변경되고, 마우스를 내리면 해당 카드의 isHovered 값만 false로 변경됩니다. 이로써 다른 카드에는 영향을 미치지 않습니다.
+    3. v-if="project.isHovered"로 카드 내용 표시:
+        v-if="project.isHovered"를 사용하여, 마우스를 올린 카드에만 카드 내용이 표시되도록 합니다.
+    결과:
+        이제 각 카드가 독립적으로 isHovered 상태를 관리하므로, 한 카드를 호버해도 다른 카드들은 영향을 받지 않게 됩니다. 각 카드는 개별적으로 호버 시 세부 내용이 표시되고, 마우스를 떼면 세부 내용이 사라집니다.
+
+
+ver.5
+<swiper
+  :direction="'horizontal'"   <!-- 화면을 가로로 움직이게 설정 -->
+  :slidesPerView="'auto'"
+  :freeMode="true"
+  :scrollbar="{ draggable: true }"  <!-- 스크롤바를 드래그 가능하게 설정 -->
+  :mousewheel="{ invert: false, forceToAxis: true }"  <!-- 마우스휠 세로로 스크롤해도 가로로 이동하도록 설정 -->
+  :modules="modules"
+  class="mySwiper"
+>
+
+ex ver--
+<div class="p_contant">
+    <div
+    v-for="(project, index) in 4" 
+    :key="index" 
+        class="p_card"
+        @mouseover="isHovered = true" 
+        @mouseleave="isHovered = false"
+    >
+        <div class="card">
+            <div v-if="!isHovered" class="card_img">
+                <img src="project/teamB_B.icon.svg"/>
+            </div>
+            <div v-if="isHovered" class="card_contant"
+                @mouseover="isHovered = true" 
+                @mouseleave="isHovered = false"
+            >
+                <h3>해양생물연구센터</h3>
+                <p>
+                    팀프로젝트 작업 <br/> 
+                    노후화 된 사이트 리뉴얼 <br/>
+                    인사말, 오시는 길, 구조, 보호 페이지 제작
+                </p>
+                <p>html, css, scss, javascript</p>
+                <div class="c_icon">
+                    <div class="p_icon" @click="ProjectLink('')"><img src="project/teamB_S.icon.svg"/></div>
+                    <span/>
+                    <div class="g_icon" @click="ProjectLink('')"><img src="project/github_S.icon.svg"/></div>
+                </div>
+            </div>
+        </div>
+        <h3 class="card_name">해양생물연구센터</h3>
+    </div>
+</div>
+
+
+
+해양생물연구센터
+<div class="p_contant">
+    <Swiper
+        :modules="modules"
+        :slides-per-view="'auto'"
+        :direction="'horizontal'"
+        :space-between="20"
+        :scrollbar="{ el: '.swiper-scrollbar', draggable: true }"
+        :mousewheel="{ forceToAxis: true }"
+        class="custom-swiper"
+    >
+        <SwiperSlide
+            v-for="(project, index) in 4" 
+            :key="index" 
+            @mouseover="hoverState[index] = true"
+            @mouseleave="hoverState[index] = false"
+        >
+            <div class="p_card">
+                <div class="card">
+                    <div v-if="!hoverState[index]" class="card_img">
+                        <img src="project/teamB_B.icon.svg"/>
+                    </div>
+                    <div v-if="hoverState[index]" class="card_contant"
+                        @mouseover="isHovered = true" 
+                        @mouseleave="isHovered = false"
+                    >
+                        <h3>해양생물연구센터</h3>
+                        <p>
+                            팀프로젝트 작업 <br/> 
+                            노후화 된 사이트 리뉴얼 <br/>
+                            인사말, 오시는 길, 구조, 보호 페이지 제작
+                        </p>
+                        <p>html, css, scss, javascript</p>
+                        <div class="c_icon">
+                            <div class="p_icon" @click="ProjectLink('')"><img src="project/teamB_S.icon.svg"/></div>
+                            <span/>
+                            <div class="g_icon" @click="ProjectLink('')"><img src="project/github_S.icon.svg"/></div>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="card_name">해양생물연구센터</h3>
+            </div>
+        </SwiperSlide>
+        <div class="swiper-scrollbar"></div>
+    </Swiper>
+</div>
+{
+    name: "해양생물연구센터",
+    description: "팀프로젝트 작업 \n 노후화 된 사이트 리뉴얼 \n 인사말, 오시는 길, 구조, 보호 페이지 제작",
+    technologies: "html, css, scss, javascript",
+    image: "project/teamB_B.icon.svg",
+    projectIcon: "project/teamB_S.icon.svg",
+    githubIcon: "project/github_S.icon.svg",
+    projectLink: "",
+    githubLink: "",
+    isHovered: false
+}
+
+sema 서울시립미술관
+<div class="p_contant">
+    <Swiper
+        :modules="modules"
+        :slides-per-view="'auto'"
+        :direction="'horizontal'"
+        :space-between="20"
+        :scrollbar="{ el: '.swiper-scrollbar', draggable: true }"
+        :mousewheel="{ forceToAxis: true }"
+        class="custom-swiper"
+    >
+        <SwiperSlide
+            v-for="(project, index) in 4" 
+            :key="index" 
+            @mouseover="hoverState[index] = true"
+            @mouseleave="hoverState[index] = false"
+        >
+            <div class="p_card">
+                <div class="card">
+                    <div v-if="!hoverState[index]" class="card_img">
+                        <img src="project/sema_B.icon.svg"/>
+                    </div>
+                    <div v-if="hoverState[index]" class="card_contant"
+                        @mouseover="isHovered = true" 
+                        @mouseleave="isHovered = false"
+                    >
+                        <h3>Sema 서울시립미술관</h3>
+                        <p>
+                            서울열린데이터광장 제공 <br/>
+                            서울시 오픈 API 사용
+                        </p>
+                        <p>
+                            Html, Css, Javscript, <br/>
+                            Next.js, Firebase, Nextauth
+                        </p>
+                        <div class="c_icon">
+                            <div class="p_icon" @click="ProjectLink('')"><img src="project/sema_S.icon.svg"/></div>
+                            <span/>
+                            <div class="g_icon" @click="ProjectLink('')"><img src="project/github_S.icon.svg"/></div>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="card_name">Sema<br/>서울시립미술관</h3>
+            </div>
+        </SwiperSlide>
+        <div class="swiper-scrollbar"></div>
+    </Swiper>
+</div>
+{
+    name: "Sema 서울시립미술관",
+    description: "서울열린데이터광장 제공 \n 서울시 오픈 API 사용",
+    technologies: "Html, Css, Javscript, \n Next.js, Firebase, Nextauth",
+    image: "project/sema_B.icon.svg",
+    projectIcon: "project/sema_S.icon.svg",
+    githubIcon: "project/github_S.icon.svg",
+    projectLink: "",
+    githubLink: "",
+    isHovered: false
+}
+
+movie
+<div class="p_contant">
+    <Swiper
+        :modules="modules"
+        :slides-per-view="'auto'"
+        :direction="'horizontal'"
+        :space-between="20"
+        :scrollbar="{ el: '.swiper-scrollbar', draggable: true }"
+        :mousewheel="{ forceToAxis: true }"
+        class="custom-swiper"
+    >
+        <SwiperSlide
+            v-for="(project, index) in 4" 
+            :key="index" 
+            @mouseover="hoverState[index] = true"
+            @mouseleave="hoverState[index] = false"
+        >
+            <div class="p_card">
+                <div class="card">
+                    <div v-if="!hoverState[index]" class="card_img">
+                        <img src="project/movie_B.icon.svg"/>
+                    </div>
+                    <div v-if="hoverState[index]" class="card_contant"
+                        @mouseover="isHovered = true" 
+                        @mouseleave="isHovered = false"
+                    >
+                        <h3>Movie</h3>
+                        <p>영화 오픈 API 사용</p>
+                        <p>Html, Css, Javscript, React.js</p>
+                        <div class="c_icon">
+                            <div class="p_icon" @click="ProjectLink('')"><img src="project/movie_S.icon.svg"/></div>
+                            <span/>
+                            <div class="g_icon" @click="ProjectLink('')"><img src="project/github_S.icon.svg"/></div>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="card_name">Moive</h3>
+            </div>
+        </SwiperSlide>
+        <div class="swiper-scrollbar"></div>
+    </Swiper>
+</div>
+{
+    name: "Movie",
+    description: "영화 오픈 API 사용",
+    technologies: "Html, Css, Javscript, React.js",
+    image: "project/movie_B.icon.svg",
+    projectIcon: "project/movie_S.icon.svg",
+    githubIcon: "project/github_S.icon.svg",
+    projectLink: "",
+    githubLink: "",
+    isHovered: false
+}
+
+news
+<div class="p_contant">
+    <Swiper
+        :modules="modules"
+        :slides-per-view="'auto'"
+        :direction="'horizontal'"
+        :space-between="20"
+        :scrollbar="{ el: '.swiper-scrollbar', draggable: true }"
+        :mousewheel="{ forceToAxis: true }"
+        class="custom-swiper"
+    >
+        <SwiperSlide
+            v-for="(project, index) in 4" 
+            :key="index" 
+            @mouseover="hoverState[index] = true"
+            @mouseleave="hoverState[index] = false"
+        >
+            <div class="p_card">
+                <div class="card">
+                    <div v-if="!hoverState[index]" class="card_img">
+                        <img src="project/news_B.icon.svg"/>
+                    </div>
+                    <div v-if="hoverState[index]" class="card_contant"
+                        @mouseover="isHovered = true" 
+                        @mouseleave="isHovered = false"
+                    >
+                        <h3>News</h3>
+                        <p>뉴스 오픈 API 사용</p>
+                        <p>Html, Css, Javscript, Vue.js</p>
+                        <div class="c_icon">
+                            <div class="p_icon" @click="ProjectLink('')"><img src="project/news_S.icon.svg"/></div>
+                            <span/>
+                            <div class="g_icon" @click="ProjectLink('')"><img src="project/github_S.icon.svg"/></div>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="card_name">News</h3>
+            </div>
+        </SwiperSlide>
+        <div class="swiper-scrollbar"></div>
+    </Swiper>
+</div>
+{
+    name: "News",
+    description: "뉴스 오픈 API 사용",
+    technologies: "Html, Css, Javscript, Vue.js",
+    image: "project/news_B.icon.svg",
+    projectIcon: "project/news_S.icon.svg",
+    githubIcon: "project/github_S.icon.svg",
+    projectLink: "",
+    githubLink: "",
+    isHovered: false
+}
+
+<script>
+export default {
+    data() {
+        return {
+            // 프로젝트 카드 데이터
+            projects: [
+                {
+                    name: "",
+                    description: "",
+                    technologies: "html, css, ",
+                    image: "",
+                    projectIcon: "",
+                    githubIcon: "",
+                    projectLink: "",
+                    githubLink: "",
+                    isHovered: false
+                },
+            ]
+        }
+    }
+}
+</script>

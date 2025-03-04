@@ -18,95 +18,45 @@
         <div class="project" id="project">
             <h1>Project</h1>
             <div class="p_contant">
-                <div class="ppp">
-                    <div class="p_img"><img src="icon/teamB_icon.jpg"/></div>
-                    <div class="p_sim">
-                        <span>팀 프로젝트 : </span>
-                        <h3>해양생물연구센터</h3>
-                        <p>Html, Css, Scss, Javascript</p>
-                        <div class="p_link">
-                            <div class="icon" @click="ProjectLink('https://mingz-x.github.io/B/')"><img src="icon/teamB_icon_S.jpg"/></div>
-                            <span/>
-                            <div class="icon" @click="ProjectLink('https://github.com/mingz-x/B.git')"><img src="icon/github_icon.jpg"/></div>
+                <Swiper
+                    :modules="modules"
+                    :slides-per-view="'auto'"
+                    :direction="'horizontal'"
+                    :space-between="20"
+                    :scrollbar="{ el: '.swiper-scrollbar', draggable: true }"
+                    :mousewheel="{ forceToAxis: true }"
+                    class="custom-swiper"
+                >
+                    <SwiperSlide
+                        v-for="(project, index) in projects" 
+                        :key="index" 
+                        @mouseover="hoverState[index] = true"
+                        @mouseleave="hoverState[index] = false"
+                    >
+                        <div class="p_card">
+                            <div class="card">
+                                <div v-if="!hoverState[index]" class="card_img">
+                                    <img :src="project.image" alt="Project image"/>
+                                </div>
+                                <div v-if="hoverState[index]" class="card_contant"
+                                    @mouseover="isHovered = true" 
+                                    @mouseleave="isHovered = false"
+                                >
+                                    <h3>{{ project.name }}</h3>
+                                    <p>{{ project.description }}</p>
+                                    <p>{{ project.technologies }}</p>
+                                    <div class="c_icon">
+                                        <div class="p_icon" @click="ProjectLink(project.projectLink)"><img :src="project.projectIcon" alt="Project icon"/></div>
+                                        <span/>
+                                        <div class="g_icon" @click="ProjectLink(project.githubLink)"><img :src="project.githubIcon" alt="GitHub icon"/></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3 class="card_name">{{ project.name }}</h3>
                         </div>
-                    </div>
-                </div>
-                <div class="p_deep">
-                    <h2 class="project_in">프로젝트 소개 &#58; </h2>
-                        <p>사이트 리뉴얼 작업으로 사용자의 편의성을 높이기 위해 ux/ui를 수정하고 반응형으로 제작하여 어떤 기기로 사이트에 방문하여도 이용에 불편함이 없도록 작업했습니다.</p> <br/>
-                        <p>프로젝트는 html, css, scss, javascript를 이용하여 작업하였습니다.</p> <br/>
-                    <h2>페이지 소개 &#58; </h2>
-                        <p>‘인사말, 오시는 길, 구조ㆍ치료 활동, 서식지 외 보존 기관’ 페이지 제작을 맡았습니다.</p>
-                </div>
-            </div>
-            <div class="p_contant">
-                <div class="ppp">
-                    <div class="p_img"><img src="icon/sema_icon.jpg"/></div>
-                    <div class="p_sim">
-                        <span>프로젝트 : </span>
-                        <h3>Sema 서울시립미술관</h3>
-                        <p>Html, Css, Javascript, Next.js, Nextauth, Firebase</p>
-                        <div class="p_link">
-                            <div class="icon" @click="ProjectLink('https://sema.vercel.app/')"><img src="icon/sema_icon_S.jpg"/></div>
-                            <span/>
-                            <div class="icon" @click="ProjectLink('https://github.com/mingz-x/sema.git')"><img src="icon/github_icon.jpg"/></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="p_deep">
-                    <h2 class="project_in">프로젝트 소개 : </h2>
-                        <p>서울열린데이터광장에서 제공하는 서울시 오픈 API 중 관심가는 데이터인 미술관 데이터를 선택하여 기획했습니다.</p> <br/>
-                        <p>프로젝트는 자바스크립트 프레임워크인 next.js를 사용하여 작업했습니다.</p> <br/>
-                    <h2>페이지 소개 : </h2>
-                        <p>모바일 앱으로 제작하여 큰 메뉴로는 ‘검색, 메뉴, 홈(메인), 스크랩, 마이페이지’로 크게 5개의 메뉴로 구성했습니다.</p>
-                </div>
-            </div>
-            <div class="p_contant">
-                <div class="ppp">
-                    <div class="p_img"><img src="icon/movie_icon.jpg"/></div>
-                    <div class="p_sim">
-                        <span>프로젝트 : </span>
-                        <h3>Movie</h3>
-                        <p>Html, Css, Javascript, React.js</p>
-                        <div class="p_link">
-                            <div class="icon" @click="ProjectLink('https://movie-theta-black.vercel.app/')"><img src="icon/movie_icon_S.jpg"/></div>
-                            <span/>
-                            <div class="icon" @click="ProjectLink('https://github.com/mingz-x/movie.git')"><img src="icon/github_icon.jpg"/></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="p_deep">
-                    <h2 class="project_in">프로젝트 소개 : </h2>
-                        <p>영화 오픈 API를 이용하여 영화 사이트를 기획했습니다.</p> <br/>
-                        <!-- 영화 오픈 API를 이용하여 사이트를 제작했습니다. -->
-                        <p>프로젝트는 자바스크립트 라이브러리인 react.js를 사용하여 작업했습니다.</p> <br/>
-                        <!-- 프로젝트는 자바스크립트 라이브러리인 react.js를 사용하여 작업했습니다. -->
-                    <h2>페이지 소개 : </h2>
-                        <p>‘메인, 영화, 티비시리즈’ 3개의 메뉴와 상세페이지로 총 4개의 페이지로 제작했습니다.</p>
-                        <!-- ‘메인, 영화, 티비시리즈’ 3개의 페이지와 상세페이지로 총 4개의 페이지로 제작했습니다. -->
-                </div>
-            </div>
-            <div class="p_contant">
-                <div class="ppp">
-                    <div class="p_img"><img src="icon/news_icon.jpg"/></div>
-                    <div class="p_sim">
-                        <span>프로젝트 : </span>
-                        <h3>News</h3>
-                        <p>Html, Css, Javascript, Vue.js</p>
-                        <div class="p_link">
-                            <div class="icon" @click="ProjectLink('https://news-sable-one.vercel.app/')"><img src="icon/news_icon_S.jpg"/></div>
-                            <span/>
-                            <div class="icon" @click="ProjectLink('https://github.com/mingz-x/news.git')"><img src="icon/github_icon.jpg"/></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="p_deep">
-                    <h2 class="project_in">프로젝트 소개 : </h2>
-                        <p>뉴스 오픈 API를 이용해서 뉴스 페이지를 기획했습니다.</p> <br/>
-                        <p>프로젝트는 프로그레시브 자바스크립트 프레임워크인 vue.js를 사용하여 개발했습니다.</p> <br/>
-                    <h2>페이지 소개/설명 : </h2>
-                        <p>‘국내,해외’ 2개의 페이지 안에 ‘전체, 정치, 경제, 사회, 문화, 세계, 기술/IT, 연예, 사설’로 나누어 탭버튼을 개발하여 원하는 주제의 기사만 볼 수 있도록 기획하였습니다.</p>
-                </div>
+                    </SwiperSlide>
+                    <div class="swiper-scrollbar"></div>
+                </Swiper>
             </div>
         </div>
         <div class="about" id="about">
@@ -119,19 +69,19 @@
             <div class="key">
                 <div class="key_btn">
                     <div :class="['btn',{active:realIndex==0}]" @click="slideTo(0)">
-                        <div class="S_img"><img src="about/green_S.jpg"/></div>
+                        <div class="S_img"><img src="about/positive_S.svg"/></div>
                         <span>긍정적</span>
                     </div>
                     <div :class="['btn',{active:realIndex==1}]" @click="slideTo(1)">
-                        <div class="S_img"><img src="about/red_S.jpg"/></div>
+                        <div class="S_img"><img src="about/analytical_S.svg"/></div>
                         <span>분석적</span>
                     </div>
                     <div :class="['btn',{active:realIndex==2}]" @click="slideTo(2)">
-                        <div class="S_img"><img src="about/yellow_S.jpg"/></div>
+                        <div class="S_img"><img src="about/creative_S.svg"/></div>
                         <span>창의적</span>
                     </div>
                     <div :class="['btn',{active:realIndex==3}]" @click="slideTo(3)">
-                        <div class="S_img"><img src="about/blue_S.jpg"/></div>
+                        <div class="S_img"><img src="about/communication_S.svg"/></div>
                         <span>의사소통</span>
                     </div>
                 </div>
@@ -149,7 +99,7 @@
                         >
                         <swiper-slide>
                             <div class="word">
-                                <div class="B_img"><img src="about/green_B.jpg"/></div>
+                                <div class="B_img"><img src="about/positive_B.svg"/></div>
                                 <div class="kw">
                                     <span># 긍정적인</span>
                                     <p>긍정적인 성격으로 문제 해결과 협업 등 팀워크에서 긍정적인 에너지를 발산합니다.</p>
@@ -158,7 +108,7 @@
                         </swiper-slide>
                         <swiper-slide>
                             <div class="word">
-                                <div class="B_img"><img src="about/red_B.jpg"/></div>
+                                <div class="B_img"><img src="about/analytical_B.svg"/></div>
                                 <div class="kw">
                                     <span># 분석적인</span>
                                     <p>차분하게 데이터를 분석하고 꼼꼼하게 작업하여 코드의 품질을 높입니다.</p>
@@ -167,7 +117,7 @@
                         </swiper-slide>
                         <swiper-slide>
                             <div class="word">
-                                <div class="B_img"><img src="about/yellow_B.jpg"/></div>
+                                <div class="B_img"><img src="about/creative_B.svg"/></div>
                                 <div class="kw">
                                     <span># 창의적인</span>
                                     <p>창의적 사고로 혁신적인 해결책을 제시합니다.</p>
@@ -176,7 +126,7 @@
                         </swiper-slide>
                         <swiper-slide>
                             <div class="word">
-                                <div class="B_img"><img src="about/blue_B.jpg"/></div>
+                                <div class="B_img"><img src="about/communication_B.svg"/></div>
                                 <div class="kw">
                                     <span># 의사소통</span>
                                     <p>다양한 팀원들과의 협업에서 효과적인 의사소통 능력을 구사합니다.</p>
@@ -189,20 +139,15 @@
         </div>
         <div class="contact" id="contact">
             <h1>Contact</h1>
-            <!-- <div class="conta">
-                <div class="conta_img e-mail" ><img src="email_icon.svg"/></div>
-                <p>email@email.com</p>
-                <div class="conta_img"><img src="github_icon.svg"/></div>
-                <p>github.com/github/Repository</p>
-            </div> -->
             <div class="conta">
                 <div>
-                    <div class="conta_img"><img src="contact/email_icon.svg"/></div>
-                    <p>email@email.com</p>
+                    <div class="conta_img"><img src="contact/email_B.icon.svg"/></div>
+                    <h3>email@email.com</h3>
                 </div>
+                <span/>
                 <div>
-                    <div class="conta_img"><img src="contact/github_icon.svg"/></div>
-                    <p>github.com/github/Repository</p>
+                    <div class="conta_img"><img src="contact/github_B.icon.svg"/></div>
+                    <h3>github.com/github</h3>
                 </div>
             </div>
         </div>
@@ -212,8 +157,13 @@
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Mousewheel, Pagination } from 'swiper/modules';
-import { ref } from 'vue';
+import { Mousewheel, Pagination, Scrollbar } from 'swiper/modules';
+import { ref, onMounted } from 'vue';
+
+const modules = [Mousewheel, Scrollbar];
+const hoverState = ref([]);
+const isHovered = ref(false);
+
 
 export default {
     components: {
@@ -256,7 +206,56 @@ export default {
         return {
             project : "project",
             about : "about",
-            contact : "contact"
+            contact : "contact",
+            
+            // isHovered: false,
+            hoverState: Array(4).fill(false),
+            projects : [
+                {
+                    name: "해양생물연구센터",
+                    description: "팀프로젝트 작업 \n 노후화 된 사이트 리뉴얼 \n 인사말, 오시는 길, 구조, 보호 페이지 제작",
+                    technologies: "html, css, scss, javascript",
+                    image: "project/teamB_B.icon.svg",
+                    projectIcon: "project/teamB_S.icon.svg",
+                    githubIcon: "project/github_S.icon.svg",
+                    projectLink: "",
+                    githubLink: "",
+                    isHovered: false
+                },
+                {
+                    name: "Sema 서울시립미술관",
+                    description: "서울열린데이터광장 제공 \n 서울시 오픈 API 사용",
+                    technologies: "Html, Css, Javscript, \n Next.js, Firebase, Nextauth",
+                    image: "project/sema_B.icon.svg",
+                    projectIcon: "project/sema_S.icon.svg",
+                    githubIcon: "project/github_S.icon.svg",
+                    projectLink: "",
+                    githubLink: "",
+                    isHovered: false
+                },
+                {
+                    name: "Movie",
+                    description: "영화 오픈 API 사용",
+                    technologies: "Html, Css, Javscript, React.js",
+                    image: "project/movie_B.icon.svg",
+                    projectIcon: "project/movie_S.icon.svg",
+                    githubIcon: "project/github_S.icon.svg",
+                    projectLink: "",
+                    githubLink: "",
+                    isHovered: false
+                },
+                {
+                    name: "News",
+                    description: "뉴스 오픈 API 사용",
+                    technologies: "Html, Css, Javscript, Vue.js",
+                    image: "project/news_B.icon.svg",
+                    projectIcon: "project/news_S.icon.svg",
+                    githubIcon: "project/github_S.icon.svg",
+                    projectLink: "",
+                    githubLink: "",
+                    isHovered: false
+                },
+            ]
         }
     },
     methods: {
@@ -277,7 +276,35 @@ export default {
         ProjectLink(url){
             window.open(url, '_blank');
         }
-    },       
+    },
+    mounted() {
+        // nextTick(() => {
+        // const swiperEl = document.querySelector(".custom-swiper").swiper;
+        // const thumbEl = document.querySelector(".custom-scrollbar-thumb");
+
+        // swiperEl.on("scroll", () => {
+        //     const progress = swiperEl.getTranslate() / swiperEl.maxTranslate();
+        //     thumbEl.style.transform = `translateX(${progress * 70}%)`;
+        // });
+        // });
+
+        onMounted(() => {
+            // Swiper 인스턴스가 정상적으로 동작하도록 설정
+            const swiper = new Swiper('.custom-swiper', {
+                modules: [Mousewheel, Scrollbar],
+                slidesPerView: 'auto',
+                direction: 'horizontal',  // 가로로 스크롤
+                spaceBetween: 20,         // 슬라이드 간격
+                mousewheel: {
+                forceToAxis: true,      // 마우스휠로 가로 스크롤
+                },
+                scrollbar: {
+                draggable: true,        // 스크롤바 드래그 가능
+                },
+            });
+        });
+        
+    }, 
 }
 </script>
 <style lang="scss">
@@ -318,7 +345,11 @@ export default {
                     span{
                         cursor: pointer;
                     }
-                } 
+                    span:hover{
+                        background-color: black;
+                        color: white;
+                    } 
+                }
                 .default{
                     cursor: default;
                 }
@@ -327,90 +358,111 @@ export default {
         h1{
             font-size: 6.25em; /* 100px */
             cursor: default;
+            margin-bottom: 150px;
         }
         .project{
+            height: 100vh;
+            
+            /* Swiper 컨테이너에 가로 스크롤 추가 */
+            .swiper-container {
+                width: 100%;  /* 🔹 컨테이너의 너비 100%로 설정 */
+                height: 600px; /* 🔹 컨테이너의 고정 높이 설정 */
+                overflow: hidden;  /* 🔹 넘치는 컨텐츠는 숨김 */
+            }
+            /* 기본 Swiper 스크롤바 */
+            .swiper-scrollbar {
+                // background: rgba(0, 0, 0, 0.1);
+                // height: 8px;  /* 🔹 스크롤바 높이 설정 */
+                // border-radius: 4px;
+                position: absolute;
+                bottom: 10px;  /* ✅ 스크롤바 위치 조정 */
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80%;  /* ✅ 스크롤바 너비 조정 */
+                height: 8px;  /* ✅ 스크롤바 높이 */
+                background: rgba(0, 0, 0, 0.1);
+                border-radius: 4px;
+            }
+            .swiper-scrollbar-drag {
+                background: #007aff; /* 🔹 스크롤바 색상 설정 */
+                border-radius: 4px;
+            }
+            .swiper-slide{
+                width: fit-content;
+            }
+            
             margin: 300px 0;
             .p_contant{
-                // margin: 150px 300px;
-                margin: 150px 120px;
+                margin: 150px 100px;
                 display: flex;
-                align-items: flex-start;
-                justify-content: center;
-                // gap: 70px;
-                .ppp{
-                    // margin: 30px 0;
-                    // margin-right: 70px;
-                    border-right: 1px solid #eee;
-                    padding: 30px 0;
-                    padding-right: 70px;
-                    .p_img{
-                        width: 470px;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                gap: 20px;
+                justify-content: flex-start;
+                .p_card{
+                    // width: fit-content;
+                    border: 1px solid black;
+                    width: 400px;
+                    height: 600px;
+                }
+                .card{
+                    // border: 1px solid black;
+                    // width: 400px;
+                    // height: 500px;
+                    .card_img{
+                        padding: 140px 90px;
+                        width: 220px;
                         img{width: 100%;}
                     }
-                    .p_sim{
-                        text-align: left;
-                        width: 470px;
-                        margin-top: 20px;
-                        span{
-                            font-size: 1.5em; /* 24px */
-                        }
+                    .card_contant{
+                        padding: 50px 40px;
+                        width: 320px;
+                        height: 400px;
                         h3{
-                            font-size: 2.5em; /* 40px */
+                            font-size: 30px;
+                            border-bottom: 2px solid black;
                             margin: 0;
-                            margin-bottom: 20px;
+                            padding-bottom: 30px;
+                            margin-bottom: 50px;
                         }
                         p{
-                            font-size: 1.875em; /* 30px */
-                            margin: 0;
+                            font-size: 25px;
                         }
-                        .p_link{
+                        .c_icon{
                             display: flex;
+                            justify-content: center;
                             align-items: center;
-                            justify-content: flex-start;
-                            margin-top: 20px;
-                            // .p_icon{
-                            //     margin-right: 30px;
-                            // }
-                            // .g_icon{
-                            //     margin-left: 30px;
-                            // }
-                            .icon{
-                                cursor: pointer;
+                            gap: 30px;
+                            .p_icon{
+                                width: 60px;
+                                img{width: 100%;}
                             }
                             span{
                                 border: 1px solid black;
-                                height: 40px;
-                                margin: 0 30px;
+                                height: 37px;
+                            }
+                            .g_icon{
+                                width: 55px;
+                                img{width: 100%;}
                             }
                         }
                     }
                 }
-                // .p_line{
-                //     border: 1px solid #eee;
-                //     height: 888px;
-                // }
-                .p_deep{
-                    margin: 30px 0;
-                    // padding: 30px 0;
-                    text-align: left;
-                    width: 610px;
-                    // border-left: 1px solid #eee;
-                    // padding-left: 70px;
-                    margin-left: 70px;
-                    .project_in{
-                        margin-top: 0;
-                    }
-                    p{
-                        font-size: 1.75em; /* 28px */
-                        // margin: 20px 0;
-                        margin: 0;
-                    }
+                .card_name{
+                    // width: 400px;
+                    // border: 1px solid black;
+                    background-color: black;
+                    color: white;
+                    font-size: 30px;
+                    // font-weight: bold;
+                    padding: 30px 0;
+                    margin: 0;
                 }
             }
         }
         .about{
             margin: 300px 0;
-            height: 100vh;
+            // height: 100vh;
             .introduce{
                 p{
                     // margin-top: 100px;
@@ -495,37 +547,24 @@ export default {
         .contact{
             height: 100vh;
             align-content: center;
-            h1{
-                margin-bottom: 100px;
-            }
-            // .conta{
-            //     display: flex;
-            //     align-items: center;
-            //     justify-content: center;
-            //     gap: 40px;
-            //     .conta_img{
-            //         width: 80px;
-            //         img{width: 100%;}
-            //     }
-            //     .e-mail{
-            //         padding-right: 40px;
-            //         border-right: 2px solid black;
-            //     }
-            // }
             .conta{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 100px;
                 div{
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    gap: 20px;
+                    display: inline-block;
                     .conta_img{
-                        width: 40px;
+                        width: 100px;
                         img{width: 100%;}
                     }
-                    p{
-                        font-size: 1.875em; /* 30px */
-                        margin: 20px 0;
+                    h3{
+                        font-size: 30px;
                     }
+                }
+                span{
+                    border: 1px solid black;
+                    height: 150px;
                 }
             }
         }
