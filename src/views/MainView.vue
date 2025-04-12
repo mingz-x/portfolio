@@ -23,9 +23,9 @@
                     :slides-per-view="'auto'"
                     :direction="'horizontal'"
                     :space-between="20"
-                    :scrollbar="{ el: '.swiper-scrollbar', draggable: true }"
-                    :mousewheel="{ forceToAxis: true }"
-                    class="custom-swiper"
+                    :scrollbar="true"
+                    :mousewheel="true"
+                    class="project-swiper"
                 >
                     <SwiperSlide
                         v-for="(project, index) in projects" 
@@ -55,7 +55,7 @@
                             <h3 class="card_name">{{ project.name }}</h3>
                         </div>
                     </SwiperSlide>
-                    <div class="swiper-scrollbar"></div>
+                    <!-- <div class="swiper-scrollbar"></div> -->
                 </Swiper>
             </div>
         </div>
@@ -63,7 +63,7 @@
             <h1>About</h1>
             <div class="introduce">
                 <p>
-                    어떤 문제라도 열린 마음으로 접근하고, 다양한 아이디어를 바탕으로 <br/> 효율적으로 해결책을 모색하며, 팀과 함께 나아갑니다.
+                    어떤 문제라도 열린 마음으로 접근하고, 다양한 아이디어를 바탕으로 효율적으로 해결책을 모색하며, 팀과 함께 나아갑니다.
                 </p>
             </div>
             <div class="key">
@@ -142,7 +142,7 @@
             <div class="conta">
                 <div>
                     <div class="conta_img"><img src="contact/email_B.icon.svg"/></div>
-                    <h3>email@email.com</h3>
+                    <h3>mjpark.2k@gmail.com</h3>
                 </div>
                 <span/>
                 <div>
@@ -158,7 +158,7 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Mousewheel, Pagination, Scrollbar } from 'swiper/modules';
-import { ref, onMounted } from 'vue';
+import { ref } from 'vue';
 
 const modules = [Mousewheel, Scrollbar];
 const hoverState = ref([]);
@@ -171,7 +171,6 @@ export default {
       SwiperSlide,
     },
     setup() {
-        // Create array with 500 slides
       const slides = ref(
         Array.from({ length: 4 }).map((_, index) => `Slide ${index + 1}`)
       );
@@ -218,8 +217,8 @@ export default {
                     image: "project/teamB_B.icon.svg",
                     projectIcon: "project/teamB_S.icon.svg",
                     githubIcon: "project/github_S.icon.svg",
-                    projectLink: "",
-                    githubLink: "",
+                    projectLink: "https://mingz-x.github.io/B/",
+                    githubLink: "https://github.com/mingz-x/B.git",
                     isHovered: false
                 },
                 {
@@ -229,8 +228,8 @@ export default {
                     image: "project/sema_B.icon.svg",
                     projectIcon: "project/sema_S.icon.svg",
                     githubIcon: "project/github_S.icon.svg",
-                    projectLink: "",
-                    githubLink: "",
+                    projectLink: "https://sema-iota.vercel.app",
+                    githubLink: "https://github.com/mingz-x/sema.git",
                     isHovered: false
                 },
                 {
@@ -240,8 +239,8 @@ export default {
                     image: "project/movie_B.icon.svg",
                     projectIcon: "project/movie_S.icon.svg",
                     githubIcon: "project/github_S.icon.svg",
-                    projectLink: "",
-                    githubLink: "",
+                    projectLink: "https://movie-theta-black.vercel.app",
+                    githubLink: "https://github.com/mingz-x/movie.git",
                     isHovered: false
                 },
                 {
@@ -251,8 +250,8 @@ export default {
                     image: "project/news_B.icon.svg",
                     projectIcon: "project/news_S.icon.svg",
                     githubIcon: "project/github_S.icon.svg",
-                    projectLink: "",
-                    githubLink: "",
+                    projectLink: "https://news-sable-one.vercel.app",
+                    githubLink: "https://github.com/mingz-x/news.git",
                     isHovered: false
                 },
             ]
@@ -277,37 +276,14 @@ export default {
             window.open(url, '_blank');
         }
     },
-    mounted() {
-        // nextTick(() => {
-        // const swiperEl = document.querySelector(".custom-swiper").swiper;
-        // const thumbEl = document.querySelector(".custom-scrollbar-thumb");
-
-        // swiperEl.on("scroll", () => {
-        //     const progress = swiperEl.getTranslate() / swiperEl.maxTranslate();
-        //     thumbEl.style.transform = `translateX(${progress * 70}%)`;
-        // });
-        // });
-
-        onMounted(() => {
-            // Swiper 인스턴스가 정상적으로 동작하도록 설정
-            const swiper = new Swiper('.custom-swiper', {
-                modules: [Mousewheel, Scrollbar],
-                slidesPerView: 'auto',
-                direction: 'horizontal',  // 가로로 스크롤
-                spaceBetween: 20,         // 슬라이드 간격
-                mousewheel: {
-                forceToAxis: true,      // 마우스휠로 가로 스크롤
-                },
-                scrollbar: {
-                draggable: true,        // 스크롤바 드래그 가능
-                },
-            });
-        });
-        
-    }, 
+    
 }
 </script>
 <style lang="scss">
+$mobile: 767px;
+$tablet: 768px;
+$pc: 1200px;
+
     .main{
         max-width: 1440px;
         margin: 0 auto;
@@ -320,12 +296,21 @@ export default {
                 font-size: 5em;  /* 80px */
                 /* 6.25em = 100px */
                 cursor: default;
+                @media (max-width: $mobile) {
+                    font-size: 40px;
+                }
             }
             h1{
                 margin: 0;
                 margin-bottom: 20px;
                 font-size: 12.5em;  /* 200px */
                 cursor: default;
+                @media (min-width: $tablet) and (max-width: $pc) {
+                    font-size: 150px;
+                }
+                @media (max-width: $mobile) {
+                    font-size: 70px;
+                }
             }
             .round{
                 p{
@@ -339,16 +324,34 @@ export default {
                         border: 2px solid black;
                         border-radius: 25px;
                         font-size: 1.875em; /* 30px */
+                        @media (min-width: $tablet) and (max-width: $pc) {
+                            width: 222px;
+                            padding: 5px 0;
+                        }
+                        @media (max-width: $mobile) {
+                            width: 250px;
+                            font-size: 20px;
+                            padding: 0;
+                        }
                     }
                 }
                 .pointer{
                     span{
                         cursor: pointer;
+                        @media (max-width: $mobile) {
+                            background-color: black;
+                            color: white;
+                        }
                     }
                     span:hover{
                         background-color: black;
                         color: white;
+                        @media (max-width: $mobile) {
+                            background-color: white;
+                            color: black;
+                        }
                     } 
+
                 }
                 .default{
                     cursor: default;
@@ -359,39 +362,28 @@ export default {
             font-size: 6.25em; /* 100px */
             cursor: default;
             margin-bottom: 150px;
+            @media (min-width: $tablet) and (max-width: $pc) {
+                font-size: 80px;
+            }
+            @media (max-width: $mobile) {
+                font-size: 55px;
+                margin-bottom: 80px;
+            }
+        }
+        p{
+            word-break: keep-all;
         }
         .project{
             height: 100vh;
             
-            /* Swiper 컨테이너에 가로 스크롤 추가 */
-            .swiper-container {
-                width: 100%;  /* 🔹 컨테이너의 너비 100%로 설정 */
-                height: 600px; /* 🔹 컨테이너의 고정 높이 설정 */
-                overflow: hidden;  /* 🔹 넘치는 컨텐츠는 숨김 */
-            }
-            /* 기본 Swiper 스크롤바 */
-            .swiper-scrollbar {
-                // background: rgba(0, 0, 0, 0.1);
-                // height: 8px;  /* 🔹 스크롤바 높이 설정 */
-                // border-radius: 4px;
-                position: absolute;
-                bottom: 10px;  /* ✅ 스크롤바 위치 조정 */
-                left: 50%;
-                transform: translateX(-50%);
-                width: 80%;  /* ✅ 스크롤바 너비 조정 */
-                height: 8px;  /* ✅ 스크롤바 높이 */
-                background: rgba(0, 0, 0, 0.1);
-                border-radius: 4px;
-            }
-            .swiper-scrollbar-drag {
-                background: #007aff; /* 🔹 스크롤바 색상 설정 */
-                border-radius: 4px;
-            }
             .swiper-slide{
                 width: fit-content;
             }
             
             margin: 300px 0;
+            @media (max-width: $mobile) {
+                margin: 100px 0;
+            }
             .p_contant{
                 margin: 150px 100px;
                 display: flex;
@@ -399,85 +391,154 @@ export default {
                 flex-wrap: nowrap;
                 gap: 20px;
                 justify-content: flex-start;
+                @media (max-width: $mobile) {
+                    margin: 80px 20px;
+                }
                 .p_card{
-                    // width: fit-content;
                     border: 1px solid black;
                     width: 400px;
                     height: 600px;
+                    @media (min-width: $tablet) and (max-width: $pc) {
+                        width: 344px;
+                        height: 516px;
+                    }
+                    @media (max-width: $mobile) {
+                        width: 198px;
+                        height: 328px;
+                    }
                 }
                 .card{
-                    // border: 1px solid black;
-                    // width: 400px;
-                    // height: 500px;
                     .card_img{
                         padding: 140px 90px;
                         width: 220px;
                         img{width: 100%;}
+                        @media (min-width: $tablet) and (max-width: $pc) {
+                            width: 190px;
+                            padding: 120px 77px;
+                        }
+                        @media (max-width: $mobile) {
+                            width: 100px;
+                            padding: 90px 50px
+                        }
                     }
                     .card_contant{
                         padding: 50px 40px;
-                        width: 320px;
+                        // width: 320px;
                         height: 400px;
+                        @media (min-width: $tablet) and (max-width: $pc) {
+                            padding: 40px 20px;
+                            // padding: 30px 20px 0;
+                            height: 350px;
+                        }
+                        @media (max-width: $mobile) {
+                            padding: 20px 12px;
+                            height: 240px;
+                        }
                         h3{
                             font-size: 30px;
                             border-bottom: 2px solid black;
                             margin: 0;
                             padding-bottom: 30px;
                             margin-bottom: 50px;
+                            cursor: default;
+                            @media (min-width: $tablet) and (max-width: $pc) {
+                                padding-bottom: 20px;
+                                margin-bottom: 40px;
+                            }
+                            @media (max-width: $mobile) {
+                                font-size: 19px;
+                                padding-bottom: 10px;
+                                margin-bottom: 10px;
+                            }
                         }
                         p{
                             font-size: 25px;
+                            cursor: default;
+                            @media (max-width: $mobile) {
+                                font-size: 18px;
+                                margin: 10px 0;
+                            }
                         }
                         .c_icon{
                             display: flex;
                             justify-content: center;
                             align-items: center;
                             gap: 30px;
+                            @media (max-width: $mobile) {
+                                gap: 20px;
+                            }
                             .p_icon{
                                 width: 60px;
+                                cursor: pointer;
                                 img{width: 100%;}
+                                @media (min-width: $tablet) and (max-width: $pc) {
+                                    width: 50px;
+                                }
+                                @media (max-width: $mobile) {
+                                    width: 40px;
+                                }
                             }
                             span{
                                 border: 1px solid black;
                                 height: 37px;
+                                @media (min-width: $tablet) and (max-width: $pc)  {
+                                    height: 30px;
+                                }
+                                @media (max-width: $mobile) {
+                                    height: 24px;
+                                }
                             }
                             .g_icon{
                                 width: 55px;
+                                cursor: pointer;
                                 img{width: 100%;}
+                                @media (min-width: $tablet) and (max-width: $pc) {
+                                    width: 45px;
+                                }
+                                @media (max-width: $mobile) {
+                                    width: 40px;
+                                }
                             }
                         }
                     }
                 }
                 .card_name{
-                    // width: 400px;
-                    // border: 1px solid black;
                     background-color: black;
                     color: white;
                     font-size: 30px;
-                    // font-weight: bold;
                     padding: 30px 0;
                     margin: 0;
+                    cursor: default;
+                    @media (min-width: $tablet) and (max-width: $pc) {
+                        padding: 25px 0;
+                    }
+                    @media (max-width: $mobile) {
+                        font-size: 20px;
+                        padding: 11px 0;
+                    }
                 }
             }
         }
         .about{
             margin: 300px 0;
-            // height: 100vh;
             .introduce{
                 p{
-                    // margin-top: 100px;
                     margin: 100px 120px;
-                    // margin-bottom: 50px;
                     font-size: 1.875em; /* 30px */
+                    @media (min-width: $pc) {
+                        width: 820px;
+                        padding: 0 180px;
+                    }
+                    @media (max-width: 767px) {
+                        margin: 80px 20px;
+                        font-size: 20px;
+                    }
                 }
             }
             .key{
                 display: flex;
                 align-items: center;
-                // justify-content: center;
-                // gap: 250px;
                 justify-content: space-around;
-                // justify-content: space-evenly;
                 .key_btn{
                     .btn.active{
                         opacity: 1;
@@ -488,9 +549,8 @@ export default {
                         align-items: center;
                         justify-content: space-between;
                         gap: 20px;
-                        // padding: 10px 0;
-                        // margin: 50px;
                         margin: 20px;
+                        cursor: pointer;
                         .S_img{
                             width: 30px;
                             img{width: 100%;}
@@ -499,7 +559,6 @@ export default {
                             width: 100px;
                             text-align: left;
                             font-weight: 500;
-                            // font-size: 1.25em; /* 20px */
                             font-size: 1.5em; /* 24px */
                             color: #333;
                         }
@@ -521,7 +580,6 @@ export default {
                         align-items: center;
                         justify-content: center;
                         gap: 50px;
-                        // padding: 30px 0;
                         .B_img{
                             width: 100px;
                             img{width: 100%;}
@@ -529,13 +587,13 @@ export default {
                         .kw{
                             width: 340px;
                             text-align: left;
+                            cursor: default;
                             span{
                                 color: #555;
                                 font-weight: bold;
                                 font-size: 1.5em; /* 24px */
                             }
                             p{
-                                // margin-top: 0;
                                 margin: 0;
                                 font-size: 1.5em; /* 24px */
                             }
@@ -552,19 +610,41 @@ export default {
                 align-items: center;
                 justify-content: center;
                 gap: 100px;
+                @media (min-width: $tablet) and (max-width: $pc) {
+                    gap: 60px;
+                }
+                @media (max-width: $mobile) {
+                    flex-direction: column;
+                    gap: 20px;
+                }
                 div{
                     display: inline-block;
                     .conta_img{
                         width: 100px;
                         img{width: 100%;}
+                        @media (min-width: $tablet) and (max-width: $pc) {
+                            width: 80px;
+                        }
+                        @media (max-width: $mobile) {
+                            width: 60px;
+                        }
                     }
                     h3{
                         font-size: 30px;
+                        @media (max-width: $mobile) {
+                            font-size: 20px;
+                        }
                     }
                 }
                 span{
                     border: 1px solid black;
                     height: 150px;
+                    @media (min-width: $tablet) and (max-width: $pc) {
+                        height: 120px;
+                    }
+                    @media (max-width: $mobile) {
+                        display: none;
+                    }
                 }
             }
         }

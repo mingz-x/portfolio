@@ -874,3 +874,244 @@ export default {
     }
 }
 </script>
+
+
+
+
+
+<Swiper
+    :modules="modules"
+    :slides-per-view="'auto'"
+    :direction="'horizontal'"
+    :space-between="20"
+    :scrollbar="{ el: '.swiper-scrollbar', draggable: true, hide: false }"
+    :mousewheel="{ forceToAxis: true, invert: false }"
+    class="custom-swiper"
+
+    :modules="modules"
+    :slides-per-view="'auto'"
+    :direction="'horizontal'"
+    :space-between="20"
+    :scrollbar="{ el: '.swiper-scrollbar', draggable: true, hide: false }"
+    :mousewheel="{ forceToAxis: true, invert: false }"
+    class="custom-swiper"
+>
+<SwiperSlide
+    v-for="(project, index) in projects" 
+    :key="index" 
+    @mouseover="hoverState[index] = true"
+    @mouseleave="hoverState[index] = false"
+>
+
+const modules = [Mousewheel, Scrollbar];
+const hoverState = ref([]);
+const isHovered = ref(false);
+
+mounted() {
+        // nextTick(() => {
+        // const swiperEl = document.querySelector(".custom-swiper").swiper;
+        // const thumbEl = document.querySelector(".custom-scrollbar-thumb");
+
+        // swiperEl.on("scroll", () => {
+        //     const progress = swiperEl.getTranslate() / swiperEl.maxTranslate();
+        //     thumbEl.style.transform = `translateX(${progress * 70}%)`;
+        // });
+        // });
+
+        onMounted(() => {
+            // Swiper 인스턴스가 정상적으로 동작하도록 설정
+            const swiper = new Swiper('.custom-swiper', {
+                modules: [Mousewheel, Scrollbar],
+                slidesPerView: 'auto',
+                direction: 'horizontal',  // 가로로 스크롤
+                spaceBetween: 20,         // 슬라이드 간격
+                mousewheel: {
+                forceToAxis: true,      // 마우스휠로 가로 스크롤
+                },
+                scrollbar: {
+                draggable: true,        // 스크롤바 드래그 가능
+                },
+            });
+        });
+        
+    },
+
+/* Swiper 컨테이너에 가로 스크롤 추가 */
+.swiper-container {
+    width: 100%;  /* 🔹 컨테이너의 너비 100%로 설정 */
+    height: 600px; /* 🔹 컨테이너의 고정 높이 설정 */
+    overflow: hidden;  /* 🔹 넘치는 컨텐츠는 숨김 */
+}
+/* 기본 Swiper 스크롤바 */
+.swiper-scrollbar {
+    // background: rgba(0, 0, 0, 0.1);
+    // height: 8px;  /* 🔹 스크롤바 높이 설정 */
+    // border-radius: 4px;
+    position: absolute;
+    bottom: 10px;  /* ✅ 스크롤바 위치 조정 */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;  /* ✅ 스크롤바 너비 조정 */
+    height: 8px;  /* ✅ 스크롤바 높이 */
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+.swiper-scrollbar-drag {
+    background: #007aff; /* 🔹 스크롤바 색상 설정 */
+    border-radius: 4px;
+}
+.swiper-slide{
+    width: fit-content;
+}
+
+
+
+
+<Swiper
+    :modules="modules"
+    :direction="'horizontal'"
+    :scrollbar="true"
+    :mousewheel="true"
+    :slidesPerView="auto"
+    :spaceBetween="10"
+    class="mySwiper"
+>
+
+미디어쿼리
+~767px : Mobile
+~ 1023px : Tablet
+1024px ~ : PC
+
+@media pc (max-width: 1440px) {}
+@media Tablet (max-width: 768px) {}
+@media Mobile (max-width: 480px or 320px) {}
+
+// 화면 크기 변수 정의
+    $mobile: 767px;
+    $tablet: 768px;
+    $pc: 1200px;
+
+// 모바일 미디어 쿼리
+    @media (max-width: $mobile) {}
+// 태블릿 미디어 쿼리
+    @media (min-width: $tablet) and (max-width: $pc) {}
+// 데스크탑 미디어 쿼리
+    @media (min-width: $pc) {}
+
+
+
+project
+@media (max-width: 767px) {
+    .main .project {
+        height: 100vh;
+        margin: 100px 0;
+    }
+    .p_contant {
+        margin: 80px 20px;
+        .p_card {
+            width: 198px;
+            height: 298px;
+
+            width: 198px;
+            height: 328px;
+        }
+        .card {
+            .card_img {
+                width: 100px;
+                padding: 76px 50px;
+
+                width: 100px;
+                padding: 90px 50px;
+            }
+            .card_contant {
+                padding: 20px 10px;
+                height: 211px;
+
+                padding: 20px 12px;
+                height: 240px;
+
+                h3 {
+                    font-size: 19px;
+                    padding-bottom: 10px;
+                    margin-bottom: 10px;
+                }
+                p {
+                    font-size: 18px;
+                    margin: 10px 0;
+                }
+                .c_icon span {
+                    height: 24px;
+                }
+            }
+        }
+        .card_name {
+            font-size: 20px;
+            padding: 10px 0;
+
+            font-size: 20px;
+            padding: 11px 0;
+        }
+    }
+}
+
+about
+@media (max-width: 767px) {
+    .about .introduce p {
+        margin: 80px 20px;
+        font-size: 20px;
+    }
+    .key{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+
+        .key_btn .btn {
+            opacity: 0.2;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            /* gap: 20px; */
+            margin: 10px;
+            cursor: pointer;
+
+            .btn .S_img {
+                width: 50px;
+            }
+            
+            span {
+                width: 100px;
+                text-align: left;
+                font-weight: 500;
+                font-size: 1.5em;
+                color: #333;
+                display: none;
+            }
+        }
+    }
+}
+
+
+contact
+@media (max-width: 767px) {
+    .main h1 {
+        font-size: 55px;
+        margin-bottom: 80px;
+    }
+    .main .contact .conta {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        flex-direction: column;
+        div {
+            conta_img {
+                width: 60px;
+            }
+            h3 {
+                font-size: 20px;
+            }
+        }
+        span{display:none;}
+    }
+}
