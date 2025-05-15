@@ -35,9 +35,11 @@
                     >
                         <div class="p_card">
                             <div class="card">
+                                <!-- 카드 표지 -->
                                 <div v-if="!hoverState[index]" class="card_img">
                                     <img :src="project.image" alt="Project image"/>
                                 </div>
+                                <!-- 카드 내용 -->
                                 <div v-if="hoverState[index]" class="card_contant"
                                     @mouseover="isHovered = true" 
                                     @mouseleave="isHovered = false"
@@ -55,7 +57,6 @@
                             <h3 class="card_name">{{ project.name }}</h3>
                         </div>
                     </SwiperSlide>
-                    <!-- <div class="swiper-scrollbar"></div> -->
                 </Swiper>
             </div>
         </div>
@@ -68,217 +69,275 @@
             </div>
             <div class="key">
                 <div class="key_btn">
-                    <div :class="['btn',{active:realIndex==0}]" @click="slideTo(0)">
-                        <div class="S_img"><img src="about/positive_S.svg"/></div>
-                        <span>긍정적</span>
-                    </div>
-                    <div :class="['btn',{active:realIndex==1}]" @click="slideTo(1)">
-                        <div class="S_img"><img src="about/analytical_S.svg"/></div>
-                        <span>분석적</span>
-                    </div>
-                    <div :class="['btn',{active:realIndex==2}]" @click="slideTo(2)">
-                        <div class="S_img"><img src="about/creative_S.svg"/></div>
-                        <span>창의적</span>
-                    </div>
-                    <div :class="['btn',{active:realIndex==3}]" @click="slideTo(3)">
-                        <div class="S_img"><img src="about/communication_S.svg"/></div>
-                        <span>의사소통</span>
+                    <div
+                    v-for="(keyword, index) in keywords" :key="index" 
+                    :class="['btn',{ active: realIndex == index }]" @click="slideTo(index)">
+                        <div class="S_img"><img :src="keyword.iconS"/></div>
+                        <span>{{ keyword.label }}</span>
                     </div>
                 </div>
                 <div class="key_word">
-                        <swiper
-                            @swiper="setSwiperRef"  
-                            :direction="'vertical'"
-                            :slidesPerView="3"
-                            :spaceBetween="100"
-                            :mousewheel="true"
-                            :centeredSlides="true"
-                            :modules="modules"
-                            class="mySwiper"
-                            @slideChange="onSlideChange"
-                        >
-                        <swiper-slide>
+                    <swiper
+                        @swiper="setSwiperRef"  
+                        :direction="'vertical'"
+                        :slidesPerView="3"
+                        :spaceBetween="100"
+                        :mousewheel="true"
+                        :centeredSlides="true"
+                        :modules="modules"
+                        class="mySwiper"
+                        @slideChange="onSlideChange"
+                    >
+                        <swiper-slide
+                        v-for="(keyword, index) in keywords" :key="index">
                             <div class="word">
-                                <div class="B_img"><img src="about/positive_B.svg"/></div>
+                                <div class="B_img"><img :src="keyword.iconB"/></div>
                                 <div class="kw">
-                                    <span># 긍정적인</span>
-                                    <p>긍정적인 성격으로 문제 해결과 협업 등 팀워크에서 긍정적인 에너지를 발산합니다.</p>
-                                </div>
-                            </div>
-                        </swiper-slide>
-                        <swiper-slide>
-                            <div class="word">
-                                <div class="B_img"><img src="about/analytical_B.svg"/></div>
-                                <div class="kw">
-                                    <span># 분석적인</span>
-                                    <p>차분하게 데이터를 분석하고 꼼꼼하게 작업하여 코드의 품질을 높입니다.</p>
-                                </div>
-                            </div>
-                        </swiper-slide>
-                        <swiper-slide>
-                            <div class="word">
-                                <div class="B_img"><img src="about/creative_B.svg"/></div>
-                                <div class="kw">
-                                    <span># 창의적인</span>
-                                    <p>창의적 사고로 혁신적인 해결책을 제시합니다.</p>
-                                </div>
-                            </div>
-                        </swiper-slide>
-                        <swiper-slide>
-                            <div class="word">
-                                <div class="B_img"><img src="about/communication_B.svg"/></div>
-                                <div class="kw">
-                                    <span># 의사소통</span>
-                                    <p>다양한 팀원들과의 협업에서 효과적인 의사소통 능력을 구사합니다.</p>
+                                    <span>{{ keyword.hashtag }}</span>
+                                    <p>{{ keyword.description }}</p>
                                 </div>
                             </div>
                         </swiper-slide>
                     </swiper>
                 </div>
             </div>
+            <!-- 모바일 탭 버튼 -->
+            <div class="tab">
+                <div class="tab_button">
+                    <button
+                        v-for="(keyword, index) in keywords"
+                        :key="index"
+                        :class="{ active: activeTab === index }"
+                        @click="activeTab = index"
+                    >
+                        <img :src="keyword.iconS"/>
+                    </button>
+                </div>
+                <div class="tab_content">
+                    <div v-for="(keyword, index) in keywords" :key="index">
+                        <div v-if="activeTab === index" class="tab_text">
+                            <dt>{{ keyword.hashtag }}</dt>
+                            <dd>{{ keyword.description }}</dd>
+                        </div>
+                    </div>
+                </div>
+            </div>                
         </div>
         <div class="contact" id="contact">
             <h1>Contact</h1>
             <div class="conta">
-                <div>
+                <div @click="copyText('mjpark.2k@gmail.com')">
                     <div class="conta_img"><img src="contact/email_B.icon.svg"/></div>
-                    <h3>mjpark.2k@gmail.com</h3>
+                    <!-- <h3>mjpark.2k@gmail.com</h3> -->
+                    <h3>E-mail</h3>
                 </div>
                 <span/>
-                <div>
+                <div @click="openGithubLink">
                     <div class="conta_img"><img src="contact/github_B.icon.svg"/></div>
-                    <h3>github.com/github</h3>
+                    <!-- <h3>github.com/mjpark-2k</h3> -->
+                    <h3>Github</h3>
                 </div>
             </div>
         </div>
     </div>
 </template>
-<script>
+
+<script lang="ts">
+import { defineComponent, ref, Ref } from 'vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Mousewheel, Pagination, Scrollbar } from 'swiper/modules';
-import { ref } from 'vue';
+import { Mousewheel, Pagination } from 'swiper/modules';
 
-const modules = [Mousewheel, Scrollbar];
-const hoverState = ref([]);
-const isHovered = ref(false);
+interface Project {
+  name: string;
+  description: string;
+  technologies: string;
+  image: string;
+  projectIcon: string;
+  githubIcon: string;
+  projectLink: string;
+  githubLink: string;
+  isHovered: boolean;
+}
 
+interface Keyword {
+  label: string;
+  hashtag: string;
+  description: string;
+  iconS: string;
+  iconB: string;
+}
 
-export default {
-    components: {
-      Swiper,
-      SwiperSlide,
-    },
-    setup() {
-      const slides = ref(
-        Array.from({ length: 4 }).map((_, index) => `Slide ${index + 1}`)
-      );
-      let swiperRef = null;
-      let realIndex = ref(0);
+export default defineComponent({
+  name: 'YourComponentName',
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
+  setup() {
+    const project = ref('project');
+    const about = ref('about');
+    const contact = ref('contact');
 
-      const setSwiperRef = (swiper) => {
-        swiperRef = swiper;
-      };
-      const slideTo = (index) => {
-        realIndex.value = index;
-        swiperRef.slideTo(index);
-      };
+    const slides = ref<string[]>(
+      Array.from({ length: 4 }).map((_, index) => `Slide ${index + 1}`)
+    );
 
-      function onSlideChange(e) {
-        realIndex.value = e.activeIndex;        
+    const swiperRef: Ref<any> = ref(null);
+    const realIndex = ref<number>(0);
+
+    const setSwiperRef = (swiper: any) => {
+      swiperRef.value = swiper;
+    };
+
+    const slideTo = (index: number) => {
+      realIndex.value = index;
+      swiperRef.value?.slideTo(index);
+    };
+
+    const onSlideChange = (e: any) => {
+      realIndex.value = e.activeIndex;
+    };
+
+    const hoverState = ref<boolean[]>(Array(4).fill(false));
+
+    const projects = ref<Project[]>([
+      {
+        name: '해양생물연구센터',
+        description: '팀프로젝트 작업 \n 노후화 된 사이트 리뉴얼 \n 인사말, 오시는 길, 구조, 보호 페이지 제작',
+        technologies: 'html, css, scss, javascript',
+        image: 'project/teamB_B.icon.svg',
+        projectIcon: 'project/teamB_S.icon.svg',
+        githubIcon: 'project/github_S.icon.svg',
+        projectLink: 'https://mingz-x.github.io/B/',
+        githubLink: 'https://github.com/mingz-x/B.git',
+        isHovered: false,
+      },
+      {
+        name: 'Sema 서울시립미술관',
+        description: '서울열린데이터광장 제공 \n 서울시 오픈 API 사용',
+        technologies: 'Html, Css, Javscript, \n Next.js, Firebase, Nextauth',
+        image: 'project/sema_B.icon.svg',
+        projectIcon: 'project/sema_S.icon.svg',
+        githubIcon: 'project/github_S.icon.svg',
+        projectLink: 'https://sema-iota.vercel.app',
+        githubLink: 'https://github.com/mingz-x/sema.git',
+        isHovered: false,
+      },
+      {
+        name: 'Movie',
+        description: '영화 오픈 API 사용',
+        technologies: 'Html, Css, Javscript, React.js',
+        image: 'project/movie_B.icon.svg',
+        projectIcon: 'project/movie_S.icon.svg',
+        githubIcon: 'project/github_S.icon.svg',
+        projectLink: 'https://movie-theta-black.vercel.app',
+        githubLink: 'https://github.com/mingz-x/movie.git',
+        isHovered: false,
+      },
+      {
+        name: 'News',
+        description: '뉴스 오픈 API 사용',
+        technologies: 'Html, Css, Javscript, Vue.js',
+        image: 'project/news_B.icon.svg',
+        projectIcon: 'project/news_S.icon.svg',
+        githubIcon: 'project/github_S.icon.svg',
+        projectLink: 'https://news-sable-one.vercel.app',
+        githubLink: 'https://github.com/mingz-x/news.git',
+        isHovered: false,
+      },
+      {
+        name: 'Portfolio',
+        description: '포트폴리오 사이트',
+        technologies: 'Html, Css, Javscript, Vue.js',
+        image: 'project/portfolio_B.icon.svg',
+        projectIcon: 'project/portfolio_S.icon.svg',
+        githubIcon: 'project/github_S.icon.svg',
+        projectLink: 'https://portfolio-minjis-projects-b5399ada.vercel.app',
+        githubLink: 'https://github.com/mingz-x/portfolio.git',
+        isHovered: false,
+      },
+    ]);
+
+    const keywords = ref<Keyword[]>([
+      {
+        label: '긍정적',
+        hashtag: '# 긍정적인',
+        description: '긍정적인 성격으로 문제 해결과 협업 등 팀워크에서 긍정적인 에너지를 발산합니다.',
+        iconS: 'about/positive_S.svg',
+        iconB: 'about/positive_B.svg',
+      },
+      {
+        label: '분석적',
+        hashtag: '# 분석적인',
+        description: '차분하게 데이터를 분석하고 꼼꼼하게 작업하여 코드의 품질을 높입니다.',
+        iconS: 'about/analytical_S.svg',
+        iconB: 'about/analytical_B.svg',
+      },
+      {
+        label: '창의적',
+        hashtag: '# 창의적인',
+        description: '창의적 사고로 혁신적인 해결책을 제시합니다.',
+        iconS: 'about/creative_S.svg',
+        iconB: 'about/creative_B.svg',
+      },
+      {
+        label: '의사소통',
+        hashtag: '# 의사소통',
+        description: '다양한 팀원들과의 협업에서 효과적인 의사소통 능력을 구사합니다.',
+        iconS: 'about/communication_S.svg',
+        iconB: 'about/communication_B.svg',
+      },
+    ]);
+
+    const activeTab = ref<number>(0);
+
+    const point = (id: string) => {
+      const pointnav = document.getElementById(id);
+      if (pointnav) {
+        pointnav.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
-      
-      return {
+    };
+
+    const ProjectLink = (url: string) => {
+      window.open(url, '_blank');
+    };
+
+    const copyText = (text: string) => {
+      navigator.clipboard.writeText(text)
+        .then(() => alert('주소가 복사되었습니다!'))
+        .catch(() => alert('복사에 실패했습니다.'));
+    };
+
+    const openGithubLink = () => {
+      window.open('https://github.com/mjpark-2k', '_blank');
+    };
+
+    return {
+        project,
+        about,
+        contact,
         slides,
-        swiperRef: null,
+        swiperRef,
+        realIndex,
         setSwiperRef,
         slideTo,
-        realIndex,   
-        onSlideChange,     
+        onSlideChange,
+        hoverState,
+        projects,
+        keywords,
+        activeTab,
+        point,
+        ProjectLink,
+        copyText,
+        openGithubLink,
         modules: [Pagination, Mousewheel],
-      };
-      
-    },
-    
-    data() {
-        return {
-            project : "project",
-            about : "about",
-            contact : "contact",
-            
-            // isHovered: false,
-            hoverState: Array(4).fill(false),
-            projects : [
-                {
-                    name: "해양생물연구센터",
-                    description: "팀프로젝트 작업 \n 노후화 된 사이트 리뉴얼 \n 인사말, 오시는 길, 구조, 보호 페이지 제작",
-                    technologies: "html, css, scss, javascript",
-                    image: "project/teamB_B.icon.svg",
-                    projectIcon: "project/teamB_S.icon.svg",
-                    githubIcon: "project/github_S.icon.svg",
-                    projectLink: "https://mingz-x.github.io/B/",
-                    githubLink: "https://github.com/mingz-x/B.git",
-                    isHovered: false
-                },
-                {
-                    name: "Sema 서울시립미술관",
-                    description: "서울열린데이터광장 제공 \n 서울시 오픈 API 사용",
-                    technologies: "Html, Css, Javscript, \n Next.js, Firebase, Nextauth",
-                    image: "project/sema_B.icon.svg",
-                    projectIcon: "project/sema_S.icon.svg",
-                    githubIcon: "project/github_S.icon.svg",
-                    projectLink: "https://sema-iota.vercel.app",
-                    githubLink: "https://github.com/mingz-x/sema.git",
-                    isHovered: false
-                },
-                {
-                    name: "Movie",
-                    description: "영화 오픈 API 사용",
-                    technologies: "Html, Css, Javscript, React.js",
-                    image: "project/movie_B.icon.svg",
-                    projectIcon: "project/movie_S.icon.svg",
-                    githubIcon: "project/github_S.icon.svg",
-                    projectLink: "https://movie-theta-black.vercel.app",
-                    githubLink: "https://github.com/mingz-x/movie.git",
-                    isHovered: false
-                },
-                {
-                    name: "News",
-                    description: "뉴스 오픈 API 사용",
-                    technologies: "Html, Css, Javscript, Vue.js",
-                    image: "project/news_B.icon.svg",
-                    projectIcon: "project/news_S.icon.svg",
-                    githubIcon: "project/github_S.icon.svg",
-                    projectLink: "https://news-sable-one.vercel.app",
-                    githubLink: "https://github.com/mingz-x/news.git",
-                    isHovered: false
-                },
-            ]
-        }
-    },
-    methods: {
-        // handleClick(url, id) {
-        //     this.ProjectLink(url);
-        //     this.point(id);
-        // }, /* 선택사항(코드를 깔끔하게 유지하고 재사용성을 높이는 방법) */
-        point(id) {
-            const pointnav = document.getElementById(id);
-            if (pointnav) {
-                pointnav.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start',
-                });
-            }
-        },
-        
-        ProjectLink(url){
-            window.open(url, '_blank');
-        }
-    },
-    
-}
+    };
+  },
+});
 </script>
+
 <style lang="scss">
 $mobile: 767px;
 $tablet: 768px;
@@ -382,7 +441,7 @@ $pc: 1200px;
             
             margin: 300px 0;
             @media (max-width: $mobile) {
-                margin: 100px 0;
+                margin: 0;
             }
             .p_contant{
                 margin: 150px 100px;
@@ -423,11 +482,9 @@ $pc: 1200px;
                     }
                     .card_contant{
                         padding: 50px 40px;
-                        // width: 320px;
                         height: 400px;
                         @media (min-width: $tablet) and (max-width: $pc) {
                             padding: 40px 20px;
-                            // padding: 30px 20px 0;
                             height: 350px;
                         }
                         @media (max-width: $mobile) {
@@ -521,6 +578,10 @@ $pc: 1200px;
         }
         .about{
             margin: 300px 0;
+            @media (max-width: $mobile) {
+                margin: 0;
+                height: 100vh;
+            }
             .introduce{
                 p{
                     margin: 100px 120px;
@@ -529,7 +590,7 @@ $pc: 1200px;
                         width: 820px;
                         padding: 0 180px;
                     }
-                    @media (max-width: 767px) {
+                    @media (max-width: $mobile) {
                         margin: 80px 20px;
                         font-size: 20px;
                     }
@@ -600,6 +661,46 @@ $pc: 1200px;
                         }
                     }
                 }
+                @media (max-width: $mobile) {
+                    display: none;
+                }
+            }
+            .tab{
+                display: none;
+                @media (max-width: $mobile) {
+                    display: block;
+                }
+                .tab_button{
+                    margin-bottom: 40px;
+                    button.active{
+                        opacity: 1;
+                    }
+                    button{
+                        opacity: 0.2;
+                        border: 0;
+                        background-color: white;
+                        width: 70px;
+                        margin: 0 3px;
+                        img{
+                            width: 100%;
+                        }
+                    }
+                }
+                .tab_content{
+                    .tab_text{
+                        text-align: start;
+                        margin: 0 20px;
+                        word-break: keep-all;
+                        dt{
+                            font-size: 20px;
+                            font-weight: 700;
+                        }
+                        dd{
+                            margin: 0;
+                            font-size: 20px;
+                        }
+                    }
+                }
             }
         }
         .contact{
@@ -610,27 +711,23 @@ $pc: 1200px;
                 align-items: center;
                 justify-content: center;
                 gap: 100px;
-                @media (min-width: $tablet) and (max-width: $pc) {
-                    gap: 60px;
-                }
                 @media (max-width: $mobile) {
                     flex-direction: column;
-                    gap: 20px;
+                    gap: 40px;
                 }
                 div{
                     display: inline-block;
+                    cursor: pointer;
                     .conta_img{
                         width: 100px;
                         img{width: 100%;}
-                        @media (min-width: $tablet) and (max-width: $pc) {
-                            width: 80px;
-                        }
                         @media (max-width: $mobile) {
                             width: 60px;
                         }
                     }
                     h3{
                         font-size: 30px;
+                        margin: 20px 0 0;
                         @media (max-width: $mobile) {
                             font-size: 20px;
                         }
