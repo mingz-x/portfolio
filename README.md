@@ -1,7 +1,7 @@
 # 📇 Portfolio 포트폴리오
 
 ## 🌱 프로젝트 링크  
-🔗 [ 포트폴리오 ](https://github.com/username/project-name)
+🔗 [ Portfolio 포트폴리오 ](https://portfolio-minjis-projects-b5399ada.vercel.app)
 
 ---
 
@@ -41,17 +41,19 @@
 
 ```bash
 # 저장소 클론
-git clone https://github.com/username/project-name.git
+git clone https://github.com/mingz-x/portfolio.git
 
 # 디렉토리 이동
-cd project-name
+cd portfolio
 
 # 패키지 설치
 npm install
 
 # 개발 서버 실행
-npm start
+npm run serve
 ```
+
+🔗 http://localhost:8080 에서 앱을 확인할 수 있습니다.
 
 ---
 
@@ -100,4 +102,4 @@ npm start
 
 ## 📞 연락처
 - 📧 Email: mjpark.2k@gmail.com
-- 📒 Github: [Githubname](https://github.com/mingz-x/portfolio.git)
+- 📒 Github: [Github](https://github.com/mingz-x)
